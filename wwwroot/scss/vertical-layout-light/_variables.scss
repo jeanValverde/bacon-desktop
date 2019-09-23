@@ -1,0 +1,84 @@
+////////// SIDEBAR ////////
+$sidebar-width-lg: 239px;
+$sidebar-width-mini: 185px;
+$sidebar-width-icon: 70px;
+
+$sidebar-light-bg: #eee;
+$sidebar-light-menu-color: #676767;
+$sidebar-light-submenu-color: #676767;
+$sidebar-light-menu-active-bg: initial;
+$sidebar-light-menu-active-color: theme-color(primary);
+$sidebar-light-menu-hover-bg: #F7F7FA;
+$sidebar-light-menu-hover-color: theme-color(primary);
+$sidebar-light-submenu-hover-color: $black;
+$sidebar-light-submenu-active-color: $black;
+$sidebar-light-menu-icon-color: #676767;
+$sidebar-light-menu-arrow-color: #686868;
+$sidebar-light-profile-name-color: #404852;
+$sidebar-light-profile-title-color: #8d9498;
+
+$sidebar-dark-bg: #222437;
+$sidebar-dark-menu-color: #484F71;
+$sidebar-dark-menu-active-bg: initial;
+$sidebar-dark-menu-active-color: $white;
+$sidebar-dark-menu-hover-bg: #282c44;
+$sidebar-dark-menu-hover-color: #d0cfcf;
+$sidebar-dark-submenu-color: $sidebar-dark-menu-color;
+$sidebar-dark-submenu-hover-bg: initial;
+$sidebar-dark-submenu-hover-color: #9a94a7;
+$sidebar-dark-menu-icon-color: $sidebar-dark-menu-color;
+$sidebar-dark-profile-name-color: #ffffff;
+$sidebar-dark-profile-title-color: #8d9498;
+
+$sidebar-menu-font-size: 0.812rem;
+$sidebar-menu-padding-left: 1rem;
+$sidebar-menu-padding-right: .6rem;
+$sidebar-menu-padding-top: .75rem;
+$sidebar-menu-padding-bottom: .75rem;
+
+$sidebar-submenu-padding: .25rem 0 0 2.65rem;
+$sidebar-submenu-font-size: 0.812rem;
+$sidebar-submenu-item-padding: .7rem 1rem;
+
+$sidebar-icon-font-size:  1rem;
+$sidebar-arrow-font-size: .625rem;
+
+$sidebar-profile-bg: transparent;
+$sidebar-profile-padding: 0 1.625rem 2.25rem 1.188rem;
+
+$sidebar-mini-menu-padding: .8125rem 1rem .8125rem 1rem;
+
+$sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+
+$sidebar-box-shadow: none;
+
+$rtl-sidebar-submenu-padding: 0 4.5rem 0 0;
+
+$icon-only-collapse-width: 190px;
+$icon-only-menu-bg-light: $sidebar-light-bg;
+$icon-only-menu-bg-dark: $sidebar-dark-bg;
+
+///////// SIDEBAR ////////
+
+///////// BOXED LAYOUT ///////
+$boxed-container-width: 1200px;
+$boxed-layout-bg: #c6c8ca;
+///////// BOXED LAYOUT ///////
+
+///////// SETTINGS PANEL ////////
+
+$settings-panel-width: 300px;
+
+///////// NAVBAR ////////
+
+$navbar-default-bg: $white;
+$navbar-box-shadow: 0 4px 26px -14px rgba(182, 182, 182, 0.5);
+$navbar-height: 59px;
+$navbar-menu-color: #9b9b9b;
+$navbar-dark-menu-color: #606A96;
+$navbar-dark-item-border-color: #2E324A;
+$navbar-font-size: 1rem;
+$navbar-icon-font-size: .9375rem;
+
+///////// NAVBAR ////////
