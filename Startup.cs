@@ -97,7 +97,7 @@ namespace bacon_desktop
                 {
                     Label ="Configuración",
                     Click = () => {
-                        Electron.WindowManager.CreateWindowAsync();
+
                     }
                 }
             };

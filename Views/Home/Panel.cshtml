@@ -1,0 +1,152 @@
+﻿@using bacon_desktop.Models;
+@{ 
+
+    Personal personal = (Personal) ViewData["personal"];
+
+}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bacon</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/images/favicon.png" />
+
+
+    <link rel="import" target="cocinaIndex" href="../Cocina/index"> 
+
+    @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
+    
+</head>
+
+<body class="sidebar-fixed">
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper" style="padding-top: 0px;">
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <div class="sidebar-profile">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="profile-desc">
+                            <p class="name mb-0">@personal.Nombres_personal</p>
+                            <p class="designation mb-0">Sales Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav">
+
+                    Cocina
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
+                            <i class="mdi mdi-shield-half-full menu-icon"></i>
+                            <span class="menu-title">Tablero de ejecución</span>
+                        </a>
+                    </li>
+
+                    
+
+                </ul>
+                <div id="loader" class="dot-opacity-loader" style="visibility: hidden">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div id="contenido" class="content-wrapper">
+
+
+
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+        <!-- container-scroller -->
+        <!-- base:js -->
+        <script src="~/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="~/js/off-canvas.js"></script>
+        <script src="~/js/hoverable-collapse.js"></script>
+        <script src="~/js/template.js"></script>
+        <script src="~/js/settings.js"></script>
+        <script src="~/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- plugin js for this page -->
+        <!-- End plugin js for this page -->
+        <!-- Custom js for this page-->
+        <!-- End custom js for this page-->
+
+
+    @*<script type="text/javascript">
+            const links = document.querySelectorAll('link[rel="import"]');
+
+            // Import and add each page to the DOM
+            Array.prototype.forEach.call(links, function (link) {
+
+                let template = link.import.querySelector('bacon');
+
+                let clone = document.importNode(template, true);
+
+                if (link.target === 'prueba') {
+                    document.querySelector('.content-wrapper').appendChild(clone);
+                }
+
+            });
+    </script>*@
+
+
+    <script type="text/javascript">
+            function accion(etiqueta) {
+
+                //$('.content-wrapper').empty();
+                document.getElementById("contenido").innerHTML = "      "
+
+                var nombreImport = etiqueta.href.split("#")[1];
+
+                const links = document.querySelectorAll('link[rel="import"]');
+
+                // Import and add each page to the DOM
+                Array.prototype.forEach.call(links, function (link) {
+
+                    let template = link.import.querySelector('bacon');
+
+                    let clone = document.importNode(template, true);
+
+                    if (link.target === nombreImport) {
+                        document.querySelector('.content-wrapper').appendChild(clone);
+                    }
+
+                });
+            }
+    </script>
+
+
+</body>
+
+</html>
+
+
