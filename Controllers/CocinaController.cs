@@ -20,6 +20,7 @@ namespace bacon_desktop.Controllers
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
                 PersonalService personalService = new PersonalService();
+
                 try
                 {
                     Electron.IpcMain.Send(mainWindow, "asynchronous-reply", personalService.update(124, 1 , 1, 1));
