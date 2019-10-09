@@ -26,16 +26,18 @@
     <link rel="shortcut icon" href="~/images/favicon.png" />
 
 
-    <link rel="import" target="cocinaIndex" href="../Cocina/index"> 
+    <link rel="import" target="cocinaIndex" href="../Cocina/index">
+
+    <link rel="import" target="cocinaNotificacionReceta" href="../Cocina/NotificacionReceta">
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
-    
+
 </head>
 
 <body class="sidebar-fixed">
     <div class="container-scroller">
 
-        <div class="container-fluid page-body-wrapper" style="padding-top: 0px;">
+        <div class="container-fluid page-body-wrapper" >
             <!-- partial -->
             <!-- partial:../../partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -49,15 +51,28 @@
                 </div>
                 <ul class="nav">
 
-                    Cocina
                     <li class="nav-item">
-                        <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
-                            <i class="mdi mdi-shield-half-full menu-icon"></i>
-                            <span class="menu-title">Tablero de ejecución</span>
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Cocina</span>
+
                         </a>
+                        <div class="collapse show" id="cocina" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#cocinaNotificacionReceta" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
 
-                    
 
                 </ul>
                 <div id="loader" class="dot-opacity-loader" style="visibility: hidden">
@@ -96,10 +111,18 @@
         <script src="~/js/todolist.js"></script>
         <!-- endinject -->
         <!-- plugin js for this page -->
+        <script src="~/js/tooltips.js"></script>
+        <script src="~/vendors/jquery-toast-plugin/jquery.toast.min.js"></script>
         <!-- End plugin js for this page -->
         <!-- Custom js for this page-->
+
         <!-- End custom js for this page-->
 
+    <style type="text/css" >
+        .page-body-wrapper{
+             padding-top: 0px; 
+        }
+    </style>
 
     @*<script type="text/javascript">
             const links = document.querySelectorAll('link[rel="import"]');
@@ -122,6 +145,8 @@
     <script type="text/javascript">
             function accion(etiqueta) {
 
+                timer = false;
+
                 //$('.content-wrapper').empty();
                 document.getElementById("contenido").innerHTML = "      "
 
@@ -138,10 +163,23 @@
 
                     if (link.target === nombreImport) {
                         document.querySelector('.content-wrapper').appendChild(clone);
+                        executeFunctionByName(link.target, window); 
                     }
 
                 });
             }
+
+        function executeFunctionByName(functionName, context /*, args */) {
+          var args = Array.prototype.slice.call(arguments, 2);
+          var namespaces = functionName.split(".");
+          var func = namespaces.pop();
+          for(var i = 0; i < namespaces.length; i++) {
+            context = context[namespaces[i]];
+          }
+          return context[func].apply(context, args);
+        }
+
+
     </script>
 
 

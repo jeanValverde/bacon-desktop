@@ -43,6 +43,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "ElectronNET.API": {
               "target": "Package",
               "version": "[5.22.13, )"
@@ -62,6 +66,14 @@
               "target": "Package",
               "version": "[2.1.12, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.9, )"
+            },
+            "Oracle.ManagedDataAccess.Core": {
+              "target": "Package",
+              "version": "[2.19.31, )"
             }
           },
           "imports": [

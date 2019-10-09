@@ -8,7 +8,6 @@
  */
 function validatorForms(formulario) {
 
-    console.log(formulario);
     /**
      *
      * @param {Elements} rut
@@ -389,5 +388,5 @@ function validatorForms(formulario) {
     formulario.addEventListener("change", validar);
     //Evento de envio de formulario
     formulario.addEventListener("submit", validar);
-}
-;
+
+};

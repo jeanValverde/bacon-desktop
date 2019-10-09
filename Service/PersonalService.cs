@@ -69,7 +69,7 @@ namespace bacon_desktop.Service
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             { 
                 return personal;
             }
@@ -104,7 +104,7 @@ namespace bacon_desktop.Service
                 //reader.Dispose();
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -163,7 +163,7 @@ namespace bacon_desktop.Service
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add("P_ID_PERSONAL", OracleDbType.Int32).Value = id;
+            cmd.Parameters.Add("P_ID_ORDEN", OracleDbType.Int32).Value = id;
             cmd.Parameters.Add("CURSOR_PERSONAL", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
 
