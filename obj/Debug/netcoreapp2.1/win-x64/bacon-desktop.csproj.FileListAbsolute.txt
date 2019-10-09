@@ -56,3 +56,5 @@ F:\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\View
 F:\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Home\Panel.g.cshtml.cs
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\Index.g.cshtml.cs
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Home\Panel.g.cshtml.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\ModalReceta.g.cshtml.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\NotificacionReceta.g.cshtml.cs

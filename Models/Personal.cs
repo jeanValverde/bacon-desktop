@@ -180,5 +180,19 @@ namespace bacon_desktop.Models
                 rol = value;
             }
         }
+
+        public class EqualityComparer : IEqualityComparer<Personal>
+        {
+
+            public bool Equals(Personal x, Personal y)
+            {
+                return x.idPersonal == y.idPersonal;
+            }
+
+            public int GetHashCode(Personal obj)
+            {
+                return obj.idPersonal.GetHashCode();
+            }
+        }
     }
 }

@@ -45,5 +45,19 @@ namespace bacon_desktop.Models
                 descripcion_rol = value;
             }
         }
+
+        public class EqualityComparer : IEqualityComparer<Rol>
+        {
+
+            public bool Equals(Rol x, Rol y)
+            {
+                return x.id_rol == y.id_rol;
+            }
+
+            public int GetHashCode(Rol obj)
+            {
+                return obj.id_rol.GetHashCode();
+            }
+        }
     }
 }
