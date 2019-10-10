@@ -25,13 +25,15 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="~/images/favicon.png" />
 
-    <script type="text/javascript" >
+    <script type="text/javascript">
         const { ipcRenderer } = require("electron");
     </script>
 
-    <link rel="import" target="cocinaIndex" href="../Cocina/index"/>
+    <link rel="import" target="cocinaIndex" href="../Cocina/index" />
 
-    <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion"/>
+    <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion" />
+
+    <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
@@ -70,6 +72,23 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#cocinaNotificacion" onclick="accion(this)">
                                         <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Caja</span>
+
+                        </a>
+                        <div class="collapse show" id="cocina" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
+                                        <span class="menu-title">Pagar Ordenes</span>
                                     </a>
                                 </li>
                             </ul>
