@@ -92,7 +92,7 @@ namespace bacon_desktop.Controllers
 
                         notificacion.Descripcion = $"La orden Número: {args.ToString()} esta lista para llevar a mesa.";
 
-                        notificacion.Asunto = "Orden Lista Para Servir";
+                        notificacion.Asunto = "Cocina: Orden Lista Para Servir";
 
                         Rol rol = new Rol();
 
@@ -199,8 +199,76 @@ namespace bacon_desktop.Controllers
         }
 
 
-        public IActionResult NotificacionReceta()
+        public IActionResult Notificacion()
         {
+
+            //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
+            Electron.IpcMain.On("async-de-cocina-notify", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
+
+                CocinaService cocinaService = new CocinaService();
+
+                try
+                {
+
+                    List<Notificacion> notificacionsDe = cocinaService.getNotificacionDeCocina();
+
+                    cocinaService = null;
+
+                    cocinaService = new CocinaService();
+
+                    List<Notificacion> notificacionsPara = cocinaService.getNotificacionParaCocina();
+
+                    List<Notificacion> notificacions = cocinaService.obtenerTodasNotificacionesOrdenFecha(notificacionsDe, notificacionsPara);
+
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-cocina-notify", notificacions);
+
+                }
+                catch (Exception ex)
+                {
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-cocina-notify", ex.Message);
+                }
+            });
+
+
+            //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
+            Electron.IpcMain.On("async-cocina-notify-leido", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
+
+                CocinaService cocinaService = new CocinaService();
+
+                try
+                {
+                    int idNotificacion = int.Parse(args.ToString());
+
+                    int result = cocinaService.cambiarEstadoNotificacion(idNotificacion);
+
+                    if (result == 1)
+                    {
+                        //carga una notificacion 
+                        var options = new NotificationOptions("Exito", "Notificación marcada como leída")
+                        {
+                            OnClick = async () => await Electron.Dialog.ShowMessageBoxAsync(""),
+                            Icon = "/images/cerdito.png"
+                        };
+
+                        Electron.Notification.Show(options);
+                        //termina de cargar una notificacion 
+                    }
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-cocina-notify-leido", result);
+
+                }
+                catch (Exception ex)
+                {
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-cocina-notify-leido", ex.Message);
+                }
+            });
+
+
             return View();
         }
 

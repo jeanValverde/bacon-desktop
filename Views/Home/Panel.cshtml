@@ -25,10 +25,13 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="~/images/favicon.png" />
 
+    <script type="text/javascript" >
+        const { ipcRenderer } = require("electron");
+    </script>
 
-    <link rel="import" target="cocinaIndex" href="../Cocina/index">
+    <link rel="import" target="cocinaIndex" href="../Cocina/index"/>
 
-    <link rel="import" target="cocinaNotificacionReceta" href="../Cocina/NotificacionReceta">
+    <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion"/>
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
@@ -60,13 +63,13 @@
                         <div class="collapse show" id="cocina" style="">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#cocinaNotificacionReceta" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
+                                    <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero de ejecución</span>
+                                    <a class="nav-link" href="#cocinaNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
                                     </a>
                                 </li>
                             </ul>
