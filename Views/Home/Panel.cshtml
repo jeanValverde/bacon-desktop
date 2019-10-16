@@ -35,6 +35,8 @@
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
 
+    <link rel="import" target="deshabilitarRecetaIndex" href="../deshabilitarReceta/index" />
+
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
 </head>
@@ -89,6 +91,23 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
                                         <span class="menu-title">Pagar Ordenes</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#deshabilitarReceta" aria-expanded="true" aria-controls="deshabilitarReceta">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Deshabilitar Receta</span>
+
+                        </a>
+                        <div class="collapse show" id="deshabilitarReceta" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#deshabilitarRecetaIndex" onclick="accion(this)">
+                                        <span class="menu-title">Deshabilitar Receta</span>
                                     </a>
                                 </li>
                             </ul>
