@@ -29,11 +29,17 @@
         const { ipcRenderer } = require("electron");
     </script>
 
+
+
+
+    
+
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
 
     <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion" />
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
+    <link rel="import" target="barIndex" href="../Bar/IndexBarController" />
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
@@ -77,6 +83,32 @@
                             </ul>
                         </div>
                     </li>
+
+                    <!--Menu Bar-->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Cocina</span>
+
+                        </a>
+                        <div class="collapse show" id="bar" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#barIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
 
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
