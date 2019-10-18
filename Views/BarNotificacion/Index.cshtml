@@ -5,8 +5,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Notificaciones al Bar</h4>
-                    <p class="card-description">Todas las notificaciones al Bar</p>
+                    <h4 class="card-title">Notificaciones a Bar</h4>
+                    <p class="card-description">Todas las notificaciones a Bar</p>
                     <div class="row">
                         <div class="col-md-6 text-center text-primary display-4">Notificaciones enviadas</div>
                         <div class="col-md-6 text-center text-primary display-4">Notificaciones recibidas</div>
@@ -30,7 +30,7 @@
 
         function barNotificacion() {
 
-            function getNotificacionDeBar();
+            getNotificacionDeBar();
 
             timer = true;
 
@@ -120,13 +120,13 @@
         }
 
         function cambiarEstadoNotificacion(idNotificacion) {
-            ipcRenderer.send("async-cocina-notify-leido", idNotificacion);
+            ipcRenderer.send("async-bar-notify-leido", idNotificacion);
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
         }
 
 
-        ipcRenderer.on('asynchronous-reply-cocina-notify-leido', (event, arg) => {
+        ipcRenderer.on('asynchronous-reply-bar-notify-leido', (event, arg) => {
 
             cocinaNotificacion();
 
@@ -134,7 +134,7 @@
 
          setInterval(function () {
              if (timer) {
-                 barNotificacion();
+                barNotificacion();
             }
         }, 60000);
 

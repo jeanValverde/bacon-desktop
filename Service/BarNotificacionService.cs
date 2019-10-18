@@ -10,13 +10,13 @@ using System.Data;
 namespace bacon_desktop.Service
 
 {
-    public class BarService
+    public class BarNotificacionService
     {
         private ConnectionBacon connectionBacon;
         private OracleConnection con;
         private OracleCommand cmd;
 
-        public BarService()
+        public BarNotificacionService()
         {
             //instacia la conexion a la base de datos  
             connectionBacon = new ConnectionBacon();
@@ -111,7 +111,7 @@ namespace bacon_desktop.Service
 
         }
 
-        public List<Notificacion> getNotificacionDeCocina()
+        public List<Notificacion> getNotificacionDeBar()
         {
             cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_DE_BAR";
 
