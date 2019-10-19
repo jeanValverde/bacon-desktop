@@ -1,0 +1,117 @@
+﻿<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BACON Restaurante</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+</head>
+
+@using bacon_desktop.Models;
+@{
+
+    Orden orden = (Orden)ViewData["orden"];
+    String respuesta = "";
+    if ((String)ViewData["respuesta"] != null)
+    {
+        respuesta = (String)ViewData["respuesta"];
+    }
+
+}
+<body class="">
+    <div class="">
+        <!-- partial:../../partials/_navbar.html -->
+        <!-- partial -->
+        <div class="">
+            <!-- partial:../../partials/_settings-panel.html -->
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                @if (@respuesta == "")
+                                {
+                                    <h4>Anular Pedido N° @orden.IdOrden</h4><br />
+                                    <form id="form-anular-pedido" method="post" action="/Garzon/AnularOrden">
+
+                                        <div class="col-12">
+
+                                            <textarea style="width: 500px;height:100px" id="motivo" name="motivo" required>Ej: el cliente canceló la orden </textarea>
+
+                                        </div>
+                                        <input type="hidden" name="idOrden" value="@orden.IdOrden" />
+                                        <input type="submit" name="motivo" class="btn btn-danger btn-sm mt-3 mb-4" value="Anular orden" />
+                                    </form>
+                                }
+                                @if (@respuesta != "")
+                                {
+                                    <div class="badge badge-primary">Anulación existosa</div><br/><br />
+                                    <div class="badge badge-primary">@respuesta</div>
+                                    <br /><br />
+                                }
+                                <a id="close" class="btn btn-warning btn-sm mt-3 mb-4" href="javascript:window.close()">Cerrar la ventana</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style type="text/css">
+                    .content-wrapper {
+                        padding: 0px;
+                    }
+
+                    .col-md-12 {
+                        padding: 0px;
+                    }
+
+                    .card {
+                        padding: 0px;
+                        border-radius: 0px;
+                    }
+                </style>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller
+    <!-- base:js -->
+    <script src="~/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/js/off-canvas.js"></script>
+    <script src="~/js/hoverable-collapse.js"></script>
+    <script src="~/js/template.js"></script>
+    <script src="~/js/settings.js"></script>
+    <script src="~/js/todolist.js"></script>
+
+    <script src="~/custom/loginform.js"></script>
+    <script src="~/custom/formularios.js"></script>
+    <script type="text/javascript">
+        var formularioPassword = document.getElementsByName("form-anular-pedido")[0];
+        validatorForms(formularioPassword);
+    </script>
+
+
+
+
+</body>
+</html>
