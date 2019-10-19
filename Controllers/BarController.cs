@@ -13,7 +13,7 @@ namespace bacon_desktop.Controllers
 {
     public class BarController : Controller
     {
-        public IActionResult IndexBarController()
+        public IActionResult IndexBar()
         {
 
             //Cargas las ordenes del main
