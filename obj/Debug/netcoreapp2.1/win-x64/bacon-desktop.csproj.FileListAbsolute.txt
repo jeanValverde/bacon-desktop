@@ -156,12 +156,9 @@ C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.TagHelpers.input.cache
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.TagHelpers.output.cache
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.RazorCoreGenerate.cache
-<<<<<<< HEAD
-=======
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Bar\IndexBar.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Bar\ModalRecetaBar.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Bar\NotificacionBar.cshtml.g.cs
->>>>>>> master
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\Index.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\ModalReceta.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Cocina\Notificacion.cshtml.g.cs
@@ -174,10 +171,7 @@ C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.dll
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.pdb
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.csproj.CopyComplete
-<<<<<<< HEAD
-=======
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Garzon\IndexGarzon.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Garzon\Notificacion.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Garzon\ModalRecetaGarzon.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Garzon\ModalAnularGarzon.cshtml.g.cs
->>>>>>> master
