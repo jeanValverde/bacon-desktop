@@ -18518,11 +18518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyecto bacon\\bacon-desktop-malo\\bacon-desktop.csproj",
+      "projectUniqueName": "C:\\Proyecto bacon\\bacon-escritorio-ultimo\\bacon-desktop\\bacon-desktop.csproj",
       "projectName": "bacon-desktop",
-      "projectPath": "C:\\Proyecto bacon\\bacon-desktop-malo\\bacon-desktop.csproj",
+      "projectPath": "C:\\Proyecto bacon\\bacon-escritorio-ultimo\\bacon-desktop\\bacon-desktop.csproj",
       "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyecto bacon\\bacon-desktop-malo\\obj\\",
+      "outputPath": "C:\\Proyecto bacon\\bacon-escritorio-ultimo\\bacon-desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -13,11 +13,10 @@ namespace bacon_desktop.Controllers
 {
     public class BarController : Controller
     {
-        public IActionResult IndexBarController()
+        public IActionResult IndexBar()
         {
-
-            //Cargas las ordenes del main
-            Electron.IpcMain.On("async-receta", (args) =>
+            //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
+            Electron.IpcMain.On("async-receta-bar", (args) =>
             {
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
@@ -31,18 +30,18 @@ namespace bacon_desktop.Controllers
 
                     barService = new BarService();
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta", barService.completarOrden(ordenesBar));
 
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-bar", barService.completarOrdenBar(ordenesBar));
                 }
                 catch (Exception ex)
                 {
-
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta", ex.Message);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-bar", ex.Message);
                 }
             });
 
+
             //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
-            Electron.IpcMain.On("async-receta-cantidad", (args) =>
+            Electron.IpcMain.On("async-receta-cantidad-bar", (args) =>
             {
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
@@ -56,21 +55,21 @@ namespace bacon_desktop.Controllers
 
                     barService = new BarService();
 
-                    List<OrdenBar> ordenes = barService.completarOrden(ordenesBar);
+                    List<OrdenBar> ordenes = barService.completarOrdenBar(ordenesBar);
 
-                    List<RecetaCantidad> recetaCantidad = barService.obtenerRecetasWithCantidad(ordenes);
+                    List<RecetaCantidad> recetaCantidad = barService.obtenerRecetasWithCantidadBar(ordenes);
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-cantidad", recetaCantidad);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-cantidad-bar", recetaCantidad);
+
                 }
                 catch (Exception ex)
                 {
-
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-cantidad", ex.Message);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-cantidad-bar", ex.Message);
                 }
             });
 
             //completar la orden 
-            Electron.IpcMain.On("async-receta-completarOrden", (args) =>
+            Electron.IpcMain.On("async-receta-completarOrden-bar", (args) =>
             {
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
@@ -78,9 +77,10 @@ namespace bacon_desktop.Controllers
 
                 try
                 {
+
                     int idOrden = int.Parse(args.ToString());
 
-                    int result = barService.completarOrden(idOrden);
+                    int result = barService.completarOrdenBar(idOrden);
 
                     if (result == 1)
                     {
@@ -100,7 +100,7 @@ namespace bacon_desktop.Controllers
 
                         notificacion.Rol = rol;
 
-                        int resultNotificacion = barService.insertarNotificacion(notificacion);
+                        int resultNotificacion = barService.insertarNotificacionBar(notificacion);
 
                         if (resultNotificacion == 1)
                         {
@@ -121,7 +121,7 @@ namespace bacon_desktop.Controllers
                         throw new Exception();
                     }
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-completarOrden", "listo");
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-completarOrden-bar", "listo");
 
                 }
                 catch (Exception ex)
@@ -136,14 +136,16 @@ namespace bacon_desktop.Controllers
                     Electron.Notification.Show(options);
                     //termina de cargar una notificacion 
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-completarOrden", ex.Message);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-completarOrden-bar", ex.Message);
                 }
             });
             //fin completar la orden
 
 
+
+
             //cargar el modal 
-            Electron.IpcMain.On("modalReceta-window", async (argument) =>
+            Electron.IpcMain.On("modalRecetaBar-window", async (argument) =>
             {
                 //carga el puerto disponible
                 string viewPath = $"http://localhost:{BridgeSettings.WebPort}/bar/modalreceta?idReceta={argument}";
@@ -161,7 +163,7 @@ namespace bacon_desktop.Controllers
             return View();
         }
 
-        public IActionResult ModalReceta(string idReceta)
+        public IActionResult ModalRecetaBar(string idReceta)
         {
 
             Receta receta = new Receta();
@@ -179,7 +181,7 @@ namespace bacon_desktop.Controllers
                 recetaID = 121;
             }
 
-            receta = barService.getRecetaById(recetaID);
+            receta = barService.getRecetaByIdBar(recetaID);
 
             List<Ingrediente> ingredientes = new List<Ingrediente>();
 
@@ -187,17 +189,17 @@ namespace bacon_desktop.Controllers
 
             barService = new BarService();
 
-            ingredientes = barService.getIngredientesByIdReceta(receta.IdReceta);
+            ingredientes = barService.getIngredientesByIdRecetaBar(receta.IdReceta);
 
-            ViewData["Datos"] = recetaID;
-            ViewData["receta"] = receta;
-            ViewData["ingredientes"] = ingredientes;
+            ViewData["DatosB"] = recetaID;
+            ViewData["recetaB"] = receta;
+            ViewData["ingredientesB"] = ingredientes;
 
             return View();
         }
 
 
-        public IActionResult Notificacion()
+        public IActionResult NotificacionBar()
         {
 
             //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
@@ -210,7 +212,7 @@ namespace bacon_desktop.Controllers
                 try
                 {
 
-                    List<Notificacion> notificacionsDe = barService.getNotificacionDeBar();
+                    List<Notificacion> notificacionsDe = barService.getNotificacionBar();
 
                     barService = null;
 
@@ -218,7 +220,7 @@ namespace bacon_desktop.Controllers
 
                     List<Notificacion> notificacionsPara = barService.getNotificacionParaBar();
 
-                    List<Notificacion> notificacions = barService.obtenerTodasNotificacionesOrdenFecha(notificacionsDe, notificacionsPara);
+                    List<Notificacion> notificacions = barService.obtenerTodasNotificacionesOrdenFechaBar(notificacionsDe, notificacionsPara);
 
 
                     Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", notificacions);
@@ -229,6 +231,7 @@ namespace bacon_desktop.Controllers
                     Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", ex.Message);
                 }
             });
+
 
             //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
             Electron.IpcMain.On("async-bar-notify-leido", (args) =>
@@ -241,7 +244,7 @@ namespace bacon_desktop.Controllers
                 {
                     int idNotificacion = int.Parse(args.ToString());
 
-                    int result = barService.cambiarEstadoNotificacion(idNotificacion);
+                    int result = barService.cambiarEstadoNotificacionBar(idNotificacion);
 
                     if (result == 1)
                     {
@@ -265,9 +268,12 @@ namespace bacon_desktop.Controllers
                 }
             });
 
-            return View();
 
+            return View();
         }
     }
-
 }
+
+
+
+    
