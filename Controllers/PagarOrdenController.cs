@@ -230,7 +230,42 @@ namespace bacon_desktop.Controllers
                 }
             });
 
+
+
+
+            //CARGAR ordenes del cliente
+            Electron.IpcMain.On("async-pagarOrden-ordenesClienteInbox", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
+
+                PagarOrdenService pagarOrdenService = new PagarOrdenService();
+
+                try
+                {
+
+                    //
+                    //FALTAAAAAAAAAAAAAAAAA
+                    //
+                    //
+
+                    int idCliente = int.Parse(args.ToString());
+
+                    int total = pagarOrdenService.getClienteTotalApagarOrden(idCliente);
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-pagarOrden-ordenesClienteInbox", total);
+
+                }
+                catch (Exception ex)
+                {
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-pagarOrden-ordenesClienteInbox", ex.Message);
+                }
+            });
+
+
+
+
             return View();
         }
+
     }
 }
