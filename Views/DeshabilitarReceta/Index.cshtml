@@ -32,7 +32,7 @@
 
             for (var i = 0; i < arg.length; i++) {
                 
-                receta += "<div class='card'> <img class='card-img-top' src='https://evening-reef-92725.herokuapp.com/uploads/" + arg[i].foto + "' alt='Card image cap'> <div class='card-body text-center'><h4>" +
+                receta += "<div class='card'> <img class='card-img-top' src='https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + arg[i].foto + "' alt='Card image cap'> <div class='card-body text-center'><h4>" +
                     arg[i].nombreReceta + "</h4><h6>" + arg[i].descripcionReceta + "</h6><div><div class='badge badge-outline-primary badge-pill mr-1'> Duración </br> " + arg[i].duracionPreparacion + 
                     " min </div> <div class='badge badge-outline-primary badge-pill mt-1'> Cantidad </br>" + arg[i].cantidadPrepacionDiaria +
                     " </div></div><button onclick='DeshabilitarRec(" + arg[i].idReceta + ")' type='button' class='btn btn-primary btn-lg btn-block mt-2'><i class='mdi mdi-account'></i>Deshabilitar Receta</button></div></div>";
