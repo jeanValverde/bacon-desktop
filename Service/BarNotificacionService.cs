@@ -66,7 +66,7 @@ namespace bacon_desktop.Service
 
         {
 
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_PARA_BAR";
+            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_PARA_BAR_NOTI";
 
             cmd.CommandType = CommandType.StoredProcedure;
 

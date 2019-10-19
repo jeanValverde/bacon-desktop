@@ -31,6 +31,8 @@
         function barNotificacion() {
 
             getNotificacionDeBar();
+            
+            
 
             timer = true;
 
@@ -38,12 +40,12 @@
 
 
         function getNotificacionDeBar() {
-            ipcRenderer.send("async-de-bar-notify", 'buscar');
+            ipcRenderer.send("async-BarNotificacion-notify", 'buscar');
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
         }
-
-        ipcRenderer.on('asynchronous-reply-de-bar-notify', (event, arg) => {
+     
+        ipcRenderer.on('asynchronous-reply-BarNotificacion-notify', (event, arg) => {
 
             //enviadas - recibidas
 
@@ -55,7 +57,7 @@
             for (var i = 0; i < arg.length; i++) {
 
                 //recibida
-                if (arg[i].rol.id_rol == 5) {
+                if (arg[i].rol.id_rol == 6) {
 
 
                         message += "<div class='timeline-wrapper timeline-inverted timeline-wrapper-" + colorNotify(arg[i].estado) +  "'><div class='timeline-badge'></div><div class='timeline-panel'><div class='timeline-heading'>"
@@ -120,17 +122,20 @@
         }
 
         function cambiarEstadoNotificacion(idNotificacion) {
-            ipcRenderer.send("async-bar-notify-leido", idNotificacion);
+            ipcRenderer.send("async-BarNotificacion-notify-leido", idNotificacion);
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
         }
 
 
-        ipcRenderer.on('asynchronous-reply-bar-notify-leido', (event, arg) => {
+        ipcRenderer.on('asynchronous-reply-BarNotificacion-notify-leido', (event, arg) => {
 
-            cocinaNotificacion();
+            barNotificacion();
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
 
         });
+
 
          setInterval(function () {
              if (timer) {

@@ -18,7 +18,7 @@ namespace bacon_desktop.Controllers
         {
 
             //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
-            Electron.IpcMain.On("async-de-cocina-notify", (args) =>
+            Electron.IpcMain.On("async-BarNotificacion-notify", (args) =>
             {
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
@@ -38,18 +38,18 @@ namespace bacon_desktop.Controllers
                     List<Notificacion> notificacions = barNotificacionService.obtenerTodasNotificacionesOrdenFecha(notificacionsDe, notificacionsPara);
 
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", notificacions);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-BarNotificacion-notify", notificacions);
 
                 }
                 catch (Exception ex)
                 {
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", ex.Message);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-BarNotificacion-notify", ex.Message);
                 }
             });
 
 
             //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
-            Electron.IpcMain.On("async-bar-notify-leido", (args) =>
+            Electron.IpcMain.On("async-BarNotificacion-notify-leido", (args) =>
             {
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
@@ -74,12 +74,12 @@ namespace bacon_desktop.Controllers
                         //termina de cargar una notificacion 
                     }
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-bar-notify-leido", result);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-BarNotificacion-notify-leido", result);
 
                 }
                 catch (Exception ex)
                 {
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-bar-notify-leido", ex.Message);
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-BarNotificacion-notify-leido", ex.Message);
                 }
             });
 
