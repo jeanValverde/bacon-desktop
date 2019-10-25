@@ -99,9 +99,7 @@ namespace bacon_desktop.Service
                 ordenBar.Orden = orden;
 
                 ordenesBar.Add(ordenBar);
-                ordenesBar.Add(ordenBar);
-                ordenesBar.Add(ordenBar);
-                ordenesBar.Add(ordenBar);
+               
 
                 return ordenesBar;
             }

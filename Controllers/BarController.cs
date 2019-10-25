@@ -148,7 +148,7 @@ namespace bacon_desktop.Controllers
             Electron.IpcMain.On("modalRecetaBar-window", async (argument) =>
             {
                 //carga el puerto disponible
-                string viewPath = $"http://localhost:{BridgeSettings.WebPort}/bar/modalreceta?idReceta={argument}";
+                string viewPath = $"http://localhost:{BridgeSettings.WebPort}/bar/modalrecetaBar?idReceta={argument}";
 
                 var optionsWindows = new BrowserWindowOptions
                 {

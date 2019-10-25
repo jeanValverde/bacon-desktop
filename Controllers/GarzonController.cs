@@ -13,7 +13,7 @@ namespace bacon_desktop.Controllers
 {
     public class GarzonController : Controller
     {
-        public IActionResult IndexGarzon()
+        public IActionResult NotificacionGarzon()
         {
 
                 //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
