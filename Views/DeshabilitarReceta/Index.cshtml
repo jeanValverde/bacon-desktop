@@ -1,0 +1,75 @@
+﻿<bacon class="task-bacon">
+
+
+
+
+
+    <div class="card-columns" id="target-ord-deshabilitarReceta" style="column-count: 4">
+           
+    </div>
+
+
+    <script type="text/javascript">
+
+        function deshabilitarRecetaIndex() {
+            cargarRecetas();
+            timer = false;
+        }
+
+        function cargarRecetas() {
+            ipcRenderer.send("async-DeshabilitarReceta", 'buscar');
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+        }
+
+        ipcRenderer.on('asynchronous-reply-DeshabilitarReceta', (event, arg) => {
+
+            
+
+            let receta = "";
+
+            document.getElementById('target-ord-deshabilitarReceta').innerHTML = "";
+
+            for (var i = 0; i < arg.length; i++) {
+                
+                receta += "<div class='card'> <img class='card-img-top' src='https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + arg[i].foto + "' alt='Card image cap'> <div class='card-body text-center'><h4>" +
+                    arg[i].nombreReceta + "</h4><h6>" + arg[i].descripcionReceta + "</h6><div><div class='badge badge-outline-primary badge-pill mr-1'> Duración </br> " + arg[i].duracionPreparacion + 
+                    " min </div> <div class='badge badge-outline-primary badge-pill mt-1'> Cantidad </br>" + arg[i].cantidadPrepacionDiaria +
+                    " </div></div><button onclick='DeshabilitarRec(" + arg[i].idReceta + ")' type='button' class='btn btn-primary btn-lg btn-block mt-2'><i class='mdi mdi-account'></i>Deshabilitar Receta</button></div></div>";
+            }
+
+            document.getElementById('target-ord-deshabilitarReceta').innerHTML = receta;
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+        function DeshabilitarRec(idReceta) {
+
+            ipcRenderer.send('async-DeshabilitarRece', idReceta);
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+
+        }
+
+        ipcRenderer.on('asynchronous-reply-DeshabilitarRece', (event, arg) => {
+
+            cargarRecetas();
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+        
+
+       
+
+    </script>
+
+
+
+
+</bacon>
+
