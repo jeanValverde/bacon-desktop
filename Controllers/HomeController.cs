@@ -23,9 +23,9 @@ namespace bacon_desktop.Controllers
             return View();
         }
 
-        public IActionResult Panel(string username , string password)  
+        public IActionResult Panel(string username, string password)
         {
-            
+
 
             PersonalService personalService = new PersonalService();
 
@@ -41,10 +41,10 @@ namespace bacon_desktop.Controllers
 
                 //contraseña 
                 //string passwordHash = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
-                
 
-                bool verificado = BCrypt.Net.BCrypt.Verify(password, p.Contrasena_personal );
-                
+
+                bool verificado = BCrypt.Net.BCrypt.Verify(password, p.Contrasena_personal);
+
 
                 if (verificado)
                 {
@@ -57,7 +57,7 @@ namespace bacon_desktop.Controllers
                 }
                 else
                 {
-                    
+
                     return View("Index");
                 }
 
@@ -67,7 +67,7 @@ namespace bacon_desktop.Controllers
             return View("Index");
         }
 
-       
+
 
     }
 }

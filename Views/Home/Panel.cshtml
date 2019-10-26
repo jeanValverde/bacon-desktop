@@ -27,14 +27,17 @@
 
     <script type="text/javascript">
         const { ipcRenderer } = require("electron");
-    </script>
-    
+    </script>    
+
 
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
 
     <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion" />
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
+
+
+    <link rel="import" target="garzonIndex" href="../Garzon/IndexGarzon" />
 
 
     <link rel="import" target="deshabilitarRecetaIndex" href="../deshabilitarReceta/index" />
@@ -87,14 +90,28 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
                             <i class="mdi mdi-view-headline menu-icon"></i>
+<<<<<<< HEAD
                             <span class="menu-title">Caja</span>
+=======
+                            <span class="menu-title">Garzon</span>
+>>>>>>> Cristian
 
                         </a>
                         <div class="collapse show" id="cocina" style="">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
+<<<<<<< HEAD
                                     <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
                                         <span class="menu-title">Pagar Ordenes</span>
+=======
+                                    <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+>>>>>>> Cristian
                                     </a>
                                 </li>
                             </ul>
