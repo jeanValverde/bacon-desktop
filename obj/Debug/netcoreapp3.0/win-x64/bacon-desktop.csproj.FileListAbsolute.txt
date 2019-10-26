@@ -1,0 +1,9 @@
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.csprojAssemblyReference.cache
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.AssemblyInfoInputs.cache
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.AssemblyInfo.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.dll
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.pdb
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.TagHelpers.input.cache
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.TagHelpers.output.cache
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp3.0\win-x64\bacon-desktop.RazorCoreGenerate.cache
