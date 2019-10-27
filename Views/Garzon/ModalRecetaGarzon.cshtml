@@ -22,7 +22,7 @@
     Receta receta = (Receta)ViewData["receta"];
     List<Ingrediente> ingredientes = (List<Ingrediente>)ViewData["ingredientes"];
 
-    string foto = "http://localhost:8034/uploads/" + receta.Foto;
+    string foto = "https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + receta.Foto;
 }
 <body class="">
     <div class="">
