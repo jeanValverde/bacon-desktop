@@ -22,12 +22,13 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="~/css/img-cerdo.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/images/favicon.png" />
 
     <script type="text/javascript">
         const { ipcRenderer } = require("electron");
-    </script>    
+    </script>
 
 
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
@@ -49,7 +50,7 @@
 <body class="sidebar-fixed">
     <div class="container-scroller">
 
-        <div class="container-fluid page-body-wrapper" >
+        <div class="container-fluid page-body-wrapper">
             <!-- partial -->
             <!-- partial:../../partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -57,15 +58,16 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="profile-desc">
                             <p class="name mb-0">@personal.Nombres_personal</p>
-                            <p class="designation mb-0">Sales Manager</p>
+                            <p class="designation mb-0">@personal.Rol.Descripcion_rol</p>
                         </div>
                     </div>
                 </div>
                 <ul class="nav">
 
+
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <i class="mdi mdi-cake menu-icon"></i>
                             <span class="menu-title">Cocina</span>
 
                         </a>
@@ -81,51 +83,6 @@
                                         <span class="menu-title">Notificaciones</span>
                                     </a>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    
-
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-<<<<<<< HEAD
-                            <span class="menu-title">Caja</span>
-=======
-                            <span class="menu-title">Garzon</span>
->>>>>>> Cristian
-
-                        </a>
-                        <div class="collapse show" id="cocina" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
-                                        <span class="menu-title">Pagar Ordenes</span>
-=======
-                                    <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero de ejecución</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
->>>>>>> Cristian
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#deshabilitarReceta" aria-expanded="true" aria-controls="deshabilitarReceta">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Deshabilitar Receta</span>
-
-                        </a>
-                        <div class="collapse show" id="deshabilitarReceta" style="">
-                            <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#deshabilitarRecetaIndex" onclick="accion(this)">
                                         <span class="menu-title">Deshabilitar Receta</span>
@@ -136,12 +93,65 @@
                     </li>
 
 
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-cash-multiple menu-icon"></i>
+                            <span class="menu-title">Caja</span>
+
+                        </a>
+                        <div class="collapse show" id="cocina" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
+                                        <span class="menu-title">Pagar Ordenes</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
+                            <i class="mdi mdi-account-switch menu-icon"></i>
+                            <span class="menu-title">Garzon</span>
+
+                        </a>
+                        <div class="collapse show" id="bar" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                   
+
+
                 </ul>
+
+                <div id="loader" style="visibility: hidden" class="row text-center">
+                    <div class="col-md-12">
+                        <img style="width: 50%;" class="if-image" src="../images/CERDO_CON_CORBATA_HD.png">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="dot-opacity-loader">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <!---
                 <div id="loader" class="dot-opacity-loader" style="visibility: hidden">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </div>-->
             </nav>
             <!-- partial -->
             <div class="main-panel">
@@ -159,61 +169,33 @@
         <!-- page-body-wrapper ends -->
     </div>
 
-        <!-- container-scroller -->
-        <!-- base:js -->
-        <script src="~/vendors/js/vendor.bundle.base.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page-->
-        <!-- End plugin js for this page-->
-        <!-- inject:js -->
-        <script src="~/js/off-canvas.js"></script>
-        <script src="~/js/hoverable-collapse.js"></script>
-        <script src="~/js/template.js"></script>
-        <script src="~/js/settings.js"></script>
-        <script src="~/js/todolist.js"></script>
-        <!-- endinject -->
-        <!-- plugin js for this page -->
-        <script src="~/js/tooltips.js"></script>
-        <script src="~/vendors/jquery-toast-plugin/jquery.toast.min.js"></script>
-        <!-- End plugin js for this page -->
-        <!-- Custom js for this page-->
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="~/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/js/off-canvas.js"></script>
+    <script src="~/js/hoverable-collapse.js"></script>
+    <script src="~/js/template.js"></script>
+    <script src="~/js/settings.js"></script>
+    <script src="~/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="~/js/tooltips.js"></script>
+    <script src="~/vendors/jquery-toast-plugin/jquery.toast.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
 
-        <!-- End custom js for this page-->
-
-    <style type="text/css" >
-        .page-body-wrapper{
-             padding-top: 0px; 
+    <style type="text/css">
+        .page-body-wrapper {
+            padding-top: 0px;
         }
     </style>
 
     @*<script type="text/javascript">
-            const links = document.querySelectorAll('link[rel="import"]');
-
-            // Import and add each page to the DOM
-            Array.prototype.forEach.call(links, function (link) {
-
-                let template = link.import.querySelector('bacon');
-
-                let clone = document.importNode(template, true);
-
-                if (link.target === 'prueba') {
-                    document.querySelector('.content-wrapper').appendChild(clone);
-                }
-
-            });
-    </script>*@
-
-
-    <script type="text/javascript">
-            function accion(etiqueta) {
-
-                timer = false;
-
-                //$('.content-wrapper').empty();
-                document.getElementById("contenido").innerHTML = "      "
-
-                var nombreImport = etiqueta.href.split("#")[1];
-
                 const links = document.querySelectorAll('link[rel="import"]');
 
                 // Import and add each page to the DOM
@@ -223,22 +205,49 @@
 
                     let clone = document.importNode(template, true);
 
-                    if (link.target === nombreImport) {
+                    if (link.target === 'prueba') {
                         document.querySelector('.content-wrapper').appendChild(clone);
-                        executeFunctionByName(link.target, window); 
                     }
 
                 });
-            }
+        </script>*@
+
+
+    <script type="text/javascript">
+        function accion(etiqueta) {
+
+            timer = false;
+
+            //$('.content-wrapper').empty();
+            document.getElementById("contenido").innerHTML = "      "
+
+            var nombreImport = etiqueta.href.split("#")[1];
+
+            const links = document.querySelectorAll('link[rel="import"]');
+
+            // Import and add each page to the DOM
+            Array.prototype.forEach.call(links, function (link) {
+
+                let template = link.import.querySelector('bacon');
+
+                let clone = document.importNode(template, true);
+
+                if (link.target === nombreImport) {
+                    document.querySelector('.content-wrapper').appendChild(clone);
+                    executeFunctionByName(link.target, window);
+                }
+
+            });
+        }
 
         function executeFunctionByName(functionName, context /*, args */) {
-          var args = Array.prototype.slice.call(arguments, 2);
-          var namespaces = functionName.split(".");
-          var func = namespaces.pop();
-          for(var i = 0; i < namespaces.length; i++) {
-            context = context[namespaces[i]];
-          }
-          return context[func].apply(context, args);
+            var args = Array.prototype.slice.call(arguments, 2);
+            var namespaces = functionName.split(".");
+            var func = namespaces.pop();
+            for (var i = 0; i < namespaces.length; i++) {
+                context = context[namespaces[i]];
+            }
+            return context[func].apply(context, args);
         }
 
 

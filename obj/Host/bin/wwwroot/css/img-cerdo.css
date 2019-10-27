@@ -1,0 +1,14 @@
+﻿
+.if-image {
+    animation: bacon 2s infinite;
+}
+
+@-webkit-keyframes bacon {
+    0% {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        transition: filter 0.4s;
+        -webkit-transition: -webkit-filter 1s;
+    }
+}
+
