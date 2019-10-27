@@ -1,7 +1,7 @@
 ﻿@using bacon_desktop.Models;
-@{ 
+@{
 
-    Personal personal = (Personal) ViewData["personal"];
+    Personal personal = (Personal)ViewData["personal"];
 
 }
 <!DOCTYPE html>
@@ -43,7 +43,9 @@
 
     <link rel="import" target="deshabilitarRecetaIndex" href="../deshabilitarReceta/index" />
 
+    <link rel="import" target="barIndex" href="../Bar/IndexBar" />
 
+    <link rel="import" target="garzonNotificacion" href="../GarzonNotificacion/NotificacionesGarzon" />
 
 </head>
 
@@ -125,11 +127,33 @@
                                         <span class="menu-title">Tablero de ejecución</span>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
 
-                   
+                    <!--Menu Bar-->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Bar</span>
+
+                        </a>
+                        <div class="collapse show" id="bar" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#barIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero de ejecución</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
 
 
                 </ul>
@@ -197,49 +221,34 @@
 
     @*<script type="text/javascript">
                 const links = document.querySelectorAll('link[rel="import"]');
-
                 // Import and add each page to the DOM
                 Array.prototype.forEach.call(links, function (link) {
-
                     let template = link.import.querySelector('bacon');
-
                     let clone = document.importNode(template, true);
-
                     if (link.target === 'prueba') {
                         document.querySelector('.content-wrapper').appendChild(clone);
                     }
-
                 });
         </script>*@
 
 
     <script type="text/javascript">
         function accion(etiqueta) {
-
             timer = false;
-
             //$('.content-wrapper').empty();
             document.getElementById("contenido").innerHTML = "      "
-
             var nombreImport = etiqueta.href.split("#")[1];
-
             const links = document.querySelectorAll('link[rel="import"]');
-
             // Import and add each page to the DOM
             Array.prototype.forEach.call(links, function (link) {
-
                 let template = link.import.querySelector('bacon');
-
                 let clone = document.importNode(template, true);
-
                 if (link.target === nombreImport) {
                     document.querySelector('.content-wrapper').appendChild(clone);
                     executeFunctionByName(link.target, window);
                 }
-
             });
         }
-
         function executeFunctionByName(functionName, context /*, args */) {
             var args = Array.prototype.slice.call(arguments, 2);
             var namespaces = functionName.split(".");
@@ -249,13 +258,10 @@
             }
             return context[func].apply(context, args);
         }
-
-
     </script>
 
 
 </body>
 
 </html>
-
 

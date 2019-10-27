@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using bacon_desktop.Models;
 using bacon_desktop.Service;
 using ElectronNET.API;

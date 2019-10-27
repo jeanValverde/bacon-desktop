@@ -1,11 +1,9 @@
 ﻿using bacon_desktop.Models;
-using bacon_desktop.Models;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace bacon_desktop.Service
 {
