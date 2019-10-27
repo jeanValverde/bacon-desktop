@@ -41,12 +41,11 @@
 
     <script type="text/javascript" >
 
-        timer = false;
-
+        
         function cocinaIndex() {
             cargarOrdenes();
             cargarRecetaCantidad();
-            timer = true;
+            timerIndexCocina = true;
         }
 
          //para cargar las ordenes 
@@ -226,7 +225,7 @@
 
         
         setInterval(function () {
-            if (timer) {
+            if (timerIndexCocina) {
                cargarOrdenes();
                cargarRecetaCantidad();
             }

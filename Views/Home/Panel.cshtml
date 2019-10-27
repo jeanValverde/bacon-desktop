@@ -248,7 +248,18 @@
 
     <script type="text/javascript">
         function accion(etiqueta) {
-            timer = false;
+
+
+            var timerPagoNotificacion = false;
+            var timerPagarOrden = false;
+            var timerNotificacionGarzon = false;
+            var timerIndexGarzon = false;
+            var timerNotificacionCocina = false;
+            var timerIndexCocina = false;
+            var timerBarNotificacion = false;
+            var timerIndexBar = false;
+
+
             //$('.content-wrapper').empty();
             document.getElementById("contenido").innerHTML = "      "
             var nombreImport = etiqueta.href.split("#")[1];

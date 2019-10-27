@@ -26,15 +26,12 @@
 
     <script type="text/javascript">
 
-        timer = false;
-
+        
         function pagoNotificacion() {
 
             getNotificacionDePago();
 
-
-
-            timer = true;
+            timerPagoNotificacion = true;
 
         }
 
@@ -138,7 +135,7 @@
 
 
          setInterval(function () {
-             if (timer) {
+             if (timerPagoNotificacion) {
                  pagoNotificacion();
             }
         }, 60000);

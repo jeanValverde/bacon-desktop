@@ -34,7 +34,7 @@
         function garzonIndex() {
             cargarOrdenesGarzon();
             cargarRecetasGarzon();
-            timer = true;
+            timerIndexGarzon = true;
         }
         //para cargar las ordenes
         function cargarOrdenesGarzon() {
@@ -167,7 +167,7 @@
             return estado;
         }
         setInterval(function () {
-            if (timer) {
+            if (timerIndexGarzon) {
                 cargarOrdenesGarzon();
                 cargarRecetasGarzon();
             }

@@ -57,13 +57,13 @@
 
     <script type="text/javascript">
 
-        timer = false;
+        
 
         function cocinaNotificacion() {
 
             getNotificacionDeCocina();
 
-            timer = true;
+            timerNotificacionCocina = true;
 
         }
 
@@ -172,7 +172,7 @@
         });
 
         setInterval(function () {
-            if (timer) {
+            if (timerNotificacionCocina) {
                 cocinaNotificacion();
             }
         }, 60000);

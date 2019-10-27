@@ -35,11 +35,11 @@
 
 
     <script type="text/javascript">
-        timer = false;
+        
         function barIndex() {
             cargarOrdenesDeBar();
             cargarRecetaCantidadDeBar();
-            timer = true;
+            timerIndexBar = true;
         }
 
         //para cargar las ordenes
@@ -217,7 +217,7 @@
 
 
         setInterval(function () {
-            if (timer) {
+            if (timerIndexBar) {
                 cargarOrdenesDeBar();
                 cargarRecetaCantidadDeBar();
             }

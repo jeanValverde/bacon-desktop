@@ -26,15 +26,14 @@
 
     <script type="text/javascript">
 
-        timer = false;
-
+        
         function barNotificacion() {
 
             getNotificacionDeBar();
             
             
 
-            timer = true;
+            timerBarNotificacion = true;
 
         }
 
@@ -138,7 +137,7 @@
 
 
          setInterval(function () {
-             if (timer) {
+             if (timerBarNotificacion) {
                 barNotificacion();
             }
         }, 60000);

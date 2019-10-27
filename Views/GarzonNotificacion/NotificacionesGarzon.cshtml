@@ -26,14 +26,14 @@
 
     <script type="text/javascript">
 
-        timer = false;
+        
 
         function garzonNotificacion() {
 
             getNotificacionDeGarzon();
 
 
-            timer = true;
+            timerNotificacionGarzon = true;
 
         }
 
@@ -134,7 +134,7 @@
 
 
         setInterval(function () {
-            if (timer) {
+            if (timerNotificacionGarzon) {
                 garzonNotificacion();
             }
         }, 60000);
