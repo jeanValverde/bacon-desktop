@@ -199,78 +199,12 @@ namespace bacon_desktop.Controllers
         }
 
 
-        public IActionResult NotificacionBar()
-        {
-
-            //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
-            Electron.IpcMain.On("async-de-bar-notify", (args) =>
-            {
-                var mainWindow = Electron.WindowManager.BrowserWindows.First();
-
-                BarService barService = new BarService();
-
-                try
-                {
-
-                    List<Notificacion> notificacionsDe = barService.getNotificacionBar();
-
-                    barService = null;
-
-                    barService = new BarService();
-
-                    List<Notificacion> notificacionsPara = barService.getNotificacionParaBar();
-
-                    List<Notificacion> notificacions = barService.obtenerTodasNotificacionesOrdenFechaBar(notificacionsDe, notificacionsPara);
+       
+           
 
 
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", notificacions);
-
-                }
-                catch (Exception ex)
-                {
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-de-bar-notify", ex.Message);
-                }
-            });
-
-
-            //CARGAR LAS ORDENES DEL MAIN   async-Nombre 
-            Electron.IpcMain.On("async-bar-notify-leido", (args) =>
-            {
-                var mainWindow = Electron.WindowManager.BrowserWindows.First();
-
-                BarService barService = new BarService();
-
-                try
-                {
-                    int idNotificacion = int.Parse(args.ToString());
-
-                    int result = barService.cambiarEstadoNotificacionBar(idNotificacion);
-
-                    if (result == 1)
-                    {
-                        //carga una notificacion 
-                        var options = new NotificationOptions("Exito", "Notificación marcada como leída")
-                        {
-                            OnClick = async () => await Electron.Dialog.ShowMessageBoxAsync(""),
-                            Icon = "/images/cerdito.png"
-                        };
-
-                        Electron.Notification.Show(options);
-                        //termina de cargar una notificacion 
-                    }
-
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-bar-notify-leido", result);
-
-                }
-                catch (Exception ex)
-                {
-                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-bar-notify-leido", ex.Message);
-                }
-            });
-
-
-            return View();
-        }
+            
+        
     }
 }
 
