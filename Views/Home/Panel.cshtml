@@ -31,7 +31,7 @@
 
 
 
-    
+
 
 
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
@@ -41,6 +41,8 @@
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
 
     <link rel="import" target="garzonIndex" href="../Garzon/IndexGarzon" />
+
+    <link rel="import" target="finanzasIndexCierreCaja" href="../Finanzas/IndexCierreCaja" />
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
@@ -122,6 +124,22 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
                                         <span class="menu-title">Pagar Ordenes</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#finanzas" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Finanzas</span>
+
+                        </a>
+                        <div class="collapse show" id="finanzas" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
+                                        <span class="menu-title">Cierre Caja</span>
                                     </a>
                                 </li>
                             </ul>

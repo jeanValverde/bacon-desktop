@@ -117,3 +117,41 @@ C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.Views
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.dll
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\electron.manifest.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.deps.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.runtimeconfig.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.runtimeconfig.dev.json
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.dll
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.pdb
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.Views.dll
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.Views.pdb
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csprojAssemblyReference.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorAssemblyInfo.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorAssemblyInfo.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.AssemblyInfoInputs.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.AssemblyInfo.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.TagHelpers.input.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.TagHelpers.output.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorCoreGenerate.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\IndexBar.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\ModalRecetaBar.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\NotificacionBar.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\Index.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\ModalReceta.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\Notificacion.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\IndexGarzon.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\ModalAnularGarzon.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\ModalRecetaGarzon.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\Notificacion.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Home\Panel.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\PagarOrden\Index.cshtml.g.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorTargetAssemblyInfo.cache
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorTargetAssemblyInfo.cs
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.Views.pdb
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.dll
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
+C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
