@@ -261,7 +261,123 @@ namespace bacon_desktop.Controllers
             });
 
 
+            //CARGAR LAS ORDENES DEL MAIN   async-Nombre  cliente 
+            Electron.IpcMain.On("async-receta-pagarOrden-cliente", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
 
+                CocinaService cocinaService = new CocinaService();
+
+                PagarOrdenService pagarOrdenService = new PagarOrdenService();
+
+                try
+                {
+                    int idCliente = int.Parse(args.ToString());
+
+                   
+                    List<OrdenCocina> ordenesCocina = pagarOrdenService.getOrdenesByCliente(idCliente);
+
+                  
+
+                    cocinaService = null;
+
+                    cocinaService = new CocinaService();
+
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-pagarOrden-cliente", cocinaService.completarOrden(ordenesCocina));
+                }
+                catch (Exception ex)
+                {
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-pagarOrden-cliente", ex.Message);
+                }
+            });
+
+
+            //buscar los clientes 
+            Electron.IpcMain.On("async-receta-pagarOrden-buscarCliente", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
+
+               
+                PagarOrdenService pagarOrdenService = new PagarOrdenService();
+
+                try
+                {
+                    string busqueda = args.ToString();
+
+                    List<Cliente> resultados = pagarOrdenService.getClienteMesaBuscar(busqueda);
+
+                    pagarOrdenService = null;
+
+                    pagarOrdenService = new PagarOrdenService();
+                    List<Cliente> all = pagarOrdenService.getClienteMesa();
+
+
+                    List<Cliente> final = pagarOrdenService.completarClienteBusqueda(resultados, all, busqueda);
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-pagarOrden-buscarCliente", final);
+                }
+                catch (Exception ex)
+                {
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-receta-pagarOrden-buscarCliente", ex.Message);
+                }
+            });
+
+
+
+            //cargar el modal 
+            Electron.IpcMain.On("modalReceta-pagarOrden-window", async (argument) =>
+            {
+                //carga el puerto disponible
+                string viewPath = $"http://localhost:{BridgeSettings.WebPort}/PagarOrden/modalrecetapago?idReceta={argument}";
+
+                var optionsWindows = new BrowserWindowOptions
+                {
+                    Frame = false
+                };
+                await Electron.WindowManager.CreateWindowAsync(optionsWindows, viewPath);
+            });
+            //cargar un modal 
+
+
+
+
+
+            return View();
+        }
+
+
+        public IActionResult ModalRecetaPago(string idReceta)
+        {
+
+            Receta receta = new Receta();
+
+            CocinaService cocinaService = new CocinaService();
+
+            Int32 recetaID = 0;
+
+            try
+            {
+                recetaID = Int32.Parse(idReceta);
+            }
+            catch (Exception)
+            {
+                recetaID = 121;
+            }
+
+            receta = cocinaService.getRecetaById(recetaID);
+
+            List<Ingrediente> ingredientes = new List<Ingrediente>();
+
+            cocinaService = null;
+
+            cocinaService = new CocinaService();
+
+            ingredientes = cocinaService.getIngredientesByIdReceta(receta.IdReceta);
+
+            ViewData["Datos"] = recetaID;
+            ViewData["receta"] = receta;
+            ViewData["ingredientes"] = ingredientes;
 
             return View();
         }

@@ -292,3 +292,5 @@ C:\Users\Esteban\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\PagoN
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\BarNotificacion\Index.cshtml.g.cs
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\PagoNotificacion\Index.cshtml.g.cs
 >>>>>>> Esteban
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\PedirOrdenGarzon\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\PagarOrden\ModalRecetaPago.cshtml.g.cs

@@ -55,8 +55,6 @@ C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Home\Panel.cshtml.g.cs
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\Notificacion.cshtml.g.cs
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Proyecto bacon\bacon-desktop\bin\Debug\netcoreapp2.1\electron.manifest.json
 C:\Proyecto bacon\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.deps.json
 C:\Proyecto bacon\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.runtimeconfig.json
@@ -120,11 +118,9 @@ C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.Views
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.dll
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
 C:\Proyecto bacon\bacon-desktop-malo\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
-<<<<<<< HEAD
 =======
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\PagarOrden\Index.cshtml.g.cs
 >>>>>>> Jean
-=======
 C:\Users\totor\bacon-desktop\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\totor\bacon-desktop\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\totor\bacon-desktop\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
@@ -157,7 +153,6 @@ C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.dll
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
 >>>>>>> Alejandro
-=======
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\bin\Debug\netcoreapp2.1\electron.manifest.json
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.deps.json
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.runtimeconfig.json
@@ -191,7 +186,6 @@ C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
 >>>>>>> Felipe
-=======
 C:\Users\Esteban\bacon-desktop\bin\Debug\netcoreapp2.1\electron.manifest.json
 C:\Users\Esteban\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.deps.json
 C:\Users\Esteban\bacon-desktop\bin\Debug\netcoreapp2.1\bacon-desktop.runtimeconfig.json
@@ -224,3 +218,13 @@ C:\Users\Esteban\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.Copy
 C:\Users\Esteban\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\BarNotificacion\Index.g.cshtml.cs
 C:\Users\Esteban\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\PagoNotificacion\Index.g.cshtml.cs
 >>>>>>> Esteban
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\BarNotificacion\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\IndexBar.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\ModalRecetaBar.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\DeshabilitarReceta\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\GarzonNotificacion\NotificacionesGarzon.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\IndexGarzon.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\ModalAnularGarzon.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Garzon\ModalRecetaGarzon.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\PagoNotificacion\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\PedirOrdenGarzon\Index.cshtml.g.cs

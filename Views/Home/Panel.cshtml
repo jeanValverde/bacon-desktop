@@ -14,6 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Bacon</title>
     <!-- base:css -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
@@ -22,13 +25,26 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
-    <link rel="stylesheet" href="~/css/img-cerdo.css">
+
+    <link rel="stylesheet" href="~/css/efecto-carga-pro.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="~/images/favicon.png" />
+
+
 
     <script type="text/javascript">
         const { ipcRenderer } = require("electron");
+        process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+        var timerPagoNotificacion = false;
+        var timerPagarOrden = false;
+        var timerNotificacionGarzon = false;
+        var timerIndexGarzon = false;
+        var timerNotificacionCocina = false;
+        var timerIndexCocina = false;
+        var timerBarNotificacion = false;
+        var timerIndexBar = false;
+        
     </script>
+
 
 
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
@@ -36,10 +52,10 @@
     <link rel="import" target="cocinaNotificacion" href="../Cocina/Notificacion" />
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
-    
 
-    <link rel="import" target="barNotificacion" href="../BarNotificacion/index"/>
-    <link rel="import" target="pagoNotificacion" href="../PagoNotificacion/index"/>
+
+    <link rel="import" target="barNotificacion" href="../BarNotificacion/index" />
+    <link rel="import" target="pagoNotificacion" href="../PagoNotificacion/index" />
 
 
     <link rel="import" target="garzonIndex" href="../Garzon/IndexGarzon" />
@@ -50,6 +66,8 @@
     <link rel="import" target="barIndex" href="../Bar/IndexBar" />
 
     <link rel="import" target="garzonNotificacion" href="../GarzonNotificacion/NotificacionesGarzon" />
+
+    <link rel="import" target="pedirOrdenGarzonIndex" href="../PedirOrdenGarzon/index" />
 
 </head>
 
@@ -64,13 +82,14 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="profile-desc">
                             <p class="name mb-0">@personal.Nombres_personal</p>
-                            <p class="designation mb-0">@personal.Rol.Descripcion_rol</p>
-                        </div>
+                            <p class="designation mb-0">@personal.Rol.Descripcion_rol </p>
+                            <input type="hidden"  value="@personal.Rut_personal" id="SESION_PERSONAL" />
+                        </div> 
                     </div>
                 </div>
                 <ul class="nav">
 
-
+                    <!--Cocina-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
                             <i class="mdi mdi-cake menu-icon"></i>
@@ -98,8 +117,8 @@
                         </div>
                     </li>
 
-                   
 
+                    <!--Caja-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
                             <i class="mdi mdi-cash-multiple menu-icon"></i>
@@ -123,7 +142,7 @@
                     </li>
 
 
-
+                    <!--Garzon-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
                             <i class="mdi mdi-account-switch menu-icon"></i>
@@ -132,6 +151,11 @@
                         </a>
                         <div class="collapse show" id="bar" style="">
                             <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#pedirOrdenGarzonIndex" onclick="accion(this)">
+                                        <span class="menu-title">Detalle Cliente</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
                                         <span class="menu-title">Tablero de ejecución</span>
@@ -221,7 +245,6 @@
     <script src="~/js/todolist.js"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
-    <script src="~/js/tooltips.js"></script>
     <script src="~/vendors/jquery-toast-plugin/jquery.toast.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
@@ -231,33 +254,29 @@
         .page-body-wrapper {
             padding-top: 0px;
         }
+
+
+        
+    
+       body::-webkit-scrollbar {
+          width: 15px;
+        }
+        body::-webkit-scrollbar-track {
+  
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        body::-webkit-scrollbar-thumb {
+          background-image: linear-gradient(45deg, #00aeff, #a68eff);
+ 
+          -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+        }
+ 
     </style>
-
-    @*<script type="text/javascript">
-                const links = document.querySelectorAll('link[rel="import"]');
-                // Import and add each page to the DOM
-                Array.prototype.forEach.call(links, function (link) {
-                    let template = link.import.querySelector('bacon');
-                    let clone = document.importNode(template, true);
-                    if (link.target === 'prueba') {
-                        document.querySelector('.content-wrapper').appendChild(clone);
-                    }
-                });
-        </script>*@
-
+    
 
     <script type="text/javascript">
         function accion(etiqueta) {
 
-
-            var timerPagoNotificacion = false;
-            var timerPagarOrden = false;
-            var timerNotificacionGarzon = false;
-            var timerIndexGarzon = false;
-            var timerNotificacionCocina = false;
-            var timerIndexCocina = false;
-            var timerBarNotificacion = false;
-            var timerIndexBar = false;
 
 
             //$('.content-wrapper').empty();
@@ -283,6 +302,10 @@
             }
             return context[func].apply(context, args);
         }
+
+         var rutPersonal = document.getElementById('SESION_PERSONAL').value;
+         sessionStorage.setItem("SESSION_PERSONAL_ACTIVO", rutPersonal);
+
     </script>
 
 

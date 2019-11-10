@@ -6,22 +6,76 @@
 
             <div class="mail-list-container col-md-3 pt-4 pb-4 border-right bg-white">
                 
-                @*<div class="border-bottom pb-2 mb-3 px-3">
+                <div class="border-bottom pb-2 mb-3 px-3">
                     <div class="form-group">
-                        <input class="form-control w-100" type="search" placeholder="Número Mesa o Nombre De Cliente" id="Mail-rearch">
+                        <input  class="form-control w-100" type="search" placeholder="Número Mesa o Nombre De Cliente" id="buscar-cliente-pagar-orden">
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">
+                        <button type="button" onclick="buscarClientePagarOrden()" class="btn btn-primary btn-lg btn-block">
                             <i class="mdi mdi-account-search"></i>
                             Buscar
                         </button>
                     </div>
-                </div>*@
+                </div>
 
-                
+ 
                 <div id="cargaClientesOrden">
 
-                    
+                    <article class="container" style="border: 0px;">
+
+                        <div class="background">
+                            <div class="left">
+                                <!----<div class="image"></div>-->
+                                <div class="mask thick"></div>
+                            </div>
+                            <div class="right">
+                                <div class="bar"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar"></div>
+                                <div class="mask thin"></div>
+                                <div class="bar medium"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar small"></div>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="background">
+                            <div class="left">
+
+                                <div class="mask thick"></div>
+                            </div>
+                            <div class="right">
+                                <div class="bar"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar"></div>
+                                <div class="mask thin"></div>
+                                <div class="bar medium"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar small"></div>
+                            </div>
+                        </div>
+
+                        <div class="background">
+                            <div class="left">
+
+                                <div class="mask thick"></div>
+                            </div>
+                            <div class="right">
+                                <div class="bar"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar"></div>
+                                <div class="mask thin"></div>
+                                <div class="bar medium"></div>
+                                <div class="mask thick"></div>
+                                <div class="bar small"></div>
+                            </div>
+                        </div>
+
+
+                    </article>
+
 
                 </div>
 
@@ -105,7 +159,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">Cambiar el monto a pagar</h4>
                                             <p class="card-description">
-                                                Basic bootstrap input groups
+                                                @*Basic bootstrap input groups*@
                                             </p>
 
                                             <div class="row">
@@ -179,49 +233,132 @@
 
                     <div class="attachments-sections">
 
-                        <div class="card-columns" style="column-count: 1;">
+                        <div class="card-columns" id="ordenesClienteApagar" style="column-count: 1;">
 
-                            <!--inicio tarjeta de ordenes--->
-                            @*<div class="card">
+
+                            <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mt-3">Orden número #452</h4>
 
-                                    <div class="badge badge-outline-primary">30 minutos</div>
+                                    <article class="container" style="border: 0px;">
 
-                                    <div class="badge badge-outline-danger">TOTAL</div>
-                                    <div class="badge badge-outline-danger">$30.000</div>
-                                    <br>
-                                    <table class="table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th class="pl-0">Receta</th>
-                                                <th class="text-center">Precio Unitario</th>
-                                                <th class="text-center">Cantidad</th>
-                                                <th class="text-center">Precio</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="pl-0"><a href="#">Rounded Primary</a></td>
-                                                <td class="pr-0 text-center">
-                                                    <div class="badge badge-pill badge-outline-primary">2</div>
-                                                </td>
-                                                <td class="pr-0 text-center">
-                                                    <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                </td>
-                                                <td class="pr-0 text-center">
-                                                    <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <h4 class="card-title mt-3">Descripción</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                                        <div class="background">
+                                            <div class="left">
+                                                <!----<div class="image"></div>-->
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
+
+                                        <br />
+
+                                        <div class="background">
+                                            <div class="left">
+
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="background">
+                                            <div class="left">
+
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
+
+
+                                    </article>
+
                                 </div>
-                            </div>*@
-                            <!--fin tarjeta de ordenes--->
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <article class="container" style="border: 0px;">
+
+                                        <div class="background">
+                                            <div class="left">
+                                                <!----<div class="image"></div>-->
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
+
+                                        <br />
+
+                                        <div class="background">
+                                            <div class="left">
+
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="background">
+                                            <div class="left">
+
+                                                <div class="mask thick"></div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="bar"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar"></div>
+                                                <div class="mask thin"></div>
+                                                <div class="bar medium"></div>
+                                                <div class="mask thick"></div>
+                                                <div class="bar small"></div>
+                                            </div>
+                                        </div>
 
 
+                                    </article>
+
+                                </div>
+                            </div>
+
+                                                       
                         </div>
                     </div>
                 </div>
@@ -243,7 +380,8 @@
             var form = document.getElementById('formCambiarValorPago');
             form.style.visibility = 'hidden';
 
-            timerPagarOrden = true;
+            timerPagarOrden = false;
+            isPagoPersonalizado = false;
 
         }
 
@@ -293,7 +431,7 @@
             let nombreCliente = document.getElementById('NombreClienteDetalle');
 
             
-            nombreCliente.innerHTML = arg.nombre + " - Ingresado (" + arg.fechaIngreso + ")";
+            nombreCliente.innerHTML = arg.nombre + " - Ingresado (" + formatFechaP(arg.fechaIngreso) + ")";
 
 
             
@@ -366,6 +504,8 @@
             totalApagarClienteDetalle(idCliente);
             habilitarDeshabilitarInput(true);
 
+            ordenesClientePagarOrdenes(idCliente);
+
             //var form = document.getElementById('formCambiarValorPago');
 
             form.style.visibility = '';
@@ -375,7 +515,7 @@
 
             btnPagarTotalCliente.innerHTML = button;
             
-
+            isPagoPersonalizado = false;
         }
 
 
@@ -478,7 +618,7 @@
        
         ipcRenderer.on('asynchronous-reply-pagarOrden-pagarClientePersonalizado', (event, arg) => {
 
-            console.log(arg);
+           
 
             var loader = document.getElementById('loader');
             loader.style.visibility = 'hidden';
@@ -491,12 +631,133 @@
         });
 
 
+        //async-receta-pagarOrden-cliente
+        function ordenesClientePagarOrdenes(idCliente) {
+            ipcRenderer.send("async-receta-pagarOrden-cliente", idCliente);
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+        }
+
+        ipcRenderer.on('asynchronous-reply-receta-pagarOrden-cliente', (event, arg) => {
+
+            
+
+            let message = "";
+
+            document.getElementById('ordenesClienteApagar').innerHTML = "";
+
+            for (var i = 0; i < arg.length; i++) {
+
+                    var recetas = "";
+                 
+                    for (var j = 0; j < arg[i].recetaOrdenada.length ; j++) {
+
+                        //recetas += "<tr><td class='pl-0'  >" + arg[i].recetaOrdenada[j].receta.nombreReceta + "</td>"
+                        //    + "<td class='pr-0 text-right'><div class='badge badge-pill badge-outline-primary'>"
+                        //    + arg[i].recetaOrdenada[j].cantidad + "</div></td></tr>";
+
+                       recetas  += "<tr><td class='pl-0'><a href='#23423423' onclick='modalRecetaPagoOrden( " + arg[i].recetaOrdenada[j].receta.idReceta + "  )' >" + arg[i].recetaOrdenada[j].receta.nombreReceta + "</a>"
+                         +  "</td><td class='pr-0 text-right'><div class='badge badge-pill badge-primary'>" +  arg[i].recetaOrdenada[j].cantidad + "</div></td></tr>";
+
+                    }
+                
+                message += "<div class='card' style='border: 1px solid #eee;' ><div class='card-body'><h4 class='card-title mt-3'>Orden número #" + arg[i].orden.idOrden + "</h4>"
+                    + "<div class='badge badge-outline-primary mr-1'>" + arg[i].orden.tiempoPreparacion + " minutos</div>"
+                    + "<div class='badge badge-outline-danger mr-1'>$"  + dar_formato(arg[i].orden.totalOrden) + " total Orden</div>"
+                    + "<div class='badge badge-" + estadoOrdenStyle(arg[i].orden.fechaCompleta) + " mr-1'>" + estadoOrden(arg[i].orden.fechaCompleta) + "</div> "
+                    + "<br />"
+                    + "<table class='table mb-0'><thead><tr><th class='pl-0'>Receta</th><th class='text-right'>Cantidad</th></tr></thead><tbody>"
+
+                    + recetas 
+
+                    + "</tbody></table>"
+                    + "<h4 class='card-title mt-3'>Descripción</h4>"
+                    + "<p class='card-text'>" + arg[i].orden.descripcion + "</p>"
+                    + "<p class='card-text'>" + stiloAnulacion(arg[i].orden.motivoAnulacion) + "</p>"
+                    
+                    + "<table class='table mb-0'><thead><tr><th class='text-right'>"
+                    + "</th>"
+                    + "</tr></thead></table></div></div>";
+
+            }
+
+            document.getElementById('ordenesClienteApagar').innerHTML = message;
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+        function buscarClientePagarOrden() {
+            let busqueda = document.getElementById('buscar-cliente-pagar-orden');
+
+             ipcRenderer.send("async-receta-pagarOrden-buscarCliente", busqueda.value);
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+            
+        }
+
+
+        ipcRenderer.on('asynchronous-reply-receta-pagarOrden-buscarCliente', (event, arg) => {
+
+           
+
+            let message = "";
+
+            document.getElementById('cargaClientesOrden').innerHTML = ""; 
+
+
+          
+
+            for (var i = 0; i < arg.length; i++) {
+
+                message += "<div class='mail-list'><div class='form-check'> <label class='form-check-label'> "
+                    + "<input onclick='cargarCliente(" + arg[i].idCliente + ")' type='radio' name='mesa' class='form-check-input'> "
+                    + "<i class='input-helper'></i></label></div> <div class='content'><p class=sender-name'>" + arg[i].nombre + "</p>"
+                    + "<p class='message_text'> Número Mesa #" + arg[i].mesa.numeroMesa + "</p></div></div>";
+
+            }
+
+
+            document.getElementById('cargaClientesOrden').innerHTML = message;
+
+            if (arg.length == 0) {
+                document.getElementById('cargaClientesOrden').innerHTML = "<div class='mail-list'><div class='alert alert-primary' style='width: 100%;' >No se encontraron resultados</div></div>";
+            }
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+
 
         setInterval(function () {
              if (timerPagarOrden) {
                 getClientesMesa();
             }
         }, 60000);
+
+        function stiloAnulacion(anulacion) {
+
+            let anulacionMessage = "" ;
+
+            if (anulacion != "N/A") {
+                anulacionMessage = "<div class='alert alert-danger' style='border-radius: 0px;' > " + anulacion + " </div>";
+            } else {
+                anulacionMessage = "Orden No Anulada";
+            }
+
+            return anulacionMessage;
+
+            
+        }
+
+        
+        function modalRecetaPagoOrden(idReceta) {
+            ipcRenderer.send("modalReceta-pagarOrden-window", idReceta);
+        }
 
 
         function dar_formato(num) {
@@ -535,7 +796,13 @@
 
         }
 
+        function formatFechaP(fecha) {
+            var f = new Date(fecha);
 
+            return f.getDay() + '-' + f.getMonth() + '-' + f.getFullYear() + ' ' + f.getHours() + ':' + f.getMinutes() + " min";
 
+        }
+
+        
     </script>
 </bacon>

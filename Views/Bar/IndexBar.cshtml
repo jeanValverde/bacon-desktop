@@ -39,7 +39,7 @@
         function barIndex() {
             cargarOrdenesDeBar();
             cargarRecetaCantidadDeBar();
-            timerIndexBar = true;
+            timerIndexBar = false;
         }
 
         //para cargar las ordenes
@@ -162,12 +162,12 @@
 
         function cargarTextos() {
 
-            var highlightedItems = document.querySelector(".cortarTexto");
+            //var highlightedItems = document.querySelector(".cortarTexto");
 
-            highlightedItems.forEach(function (userItem) {
-                var text = cortarTextoConPuntos(userItem.innerHTML, 6);
-                userItem.innerHTML = text;
-            });
+            //highlightedItems.forEach(function (userItem) {
+            //    var text = cortarTextoConPuntos(userItem.innerHTML, 6);
+            //    userItem.innerHTML = text;
+            //});
         }
 
         function calcularMinutos(fecha) {
@@ -205,11 +205,11 @@
             var estado = "info";
 
             if (integer < 15) {
-                estado = "danger"
+                estado = "warning"
             }
 
             if (integer < 5) {
-                estado = "Retrasado"
+                estado = "danger"
             }
 
             return estado;

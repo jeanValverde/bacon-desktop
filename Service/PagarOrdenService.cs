@@ -255,7 +255,7 @@ namespace bacon_desktop.Service
 
 
         //trae la ordenes del cliente por el id del cliente 
-        public List<Orden> getOrdenesByCliente(int idCliente)
+        public List<OrdenCocina> getOrdenesByCliente(int idCliente)
         {
 
             cmd.CommandText = "PACKAGE_CLIENTE.PR_LISTAR_ORDEN_BY_CLIENTE";
@@ -265,7 +265,7 @@ namespace bacon_desktop.Service
             cmd.Parameters.Add("P_ID_CLIENTE", OracleDbType.Int32).Value = idCliente;
             cmd.Parameters.Add("P_CLIENTES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
-            List<Orden> ordenesCliene = new List<Orden>();
+            List<OrdenCocina> ordenesCliene = new List<OrdenCocina>();
 
             try
             {
@@ -276,7 +276,11 @@ namespace bacon_desktop.Service
                 foreach (var item in reader)
                 {
 
+                    OrdenCocina ordenCocina = new OrdenCocina();
+
                     Orden orden = new Orden();
+
+                    
 
                     orden.IdOrden = reader.GetInt32(0);
                     orden.Descripcion = reader.GetString(1);
@@ -292,9 +296,18 @@ namespace bacon_desktop.Service
 
                     orden.EstadoOrden = estado;
 
-                    orden.TipoOrden = reader.GetInt32(8);
+                    orden.TipoOrden = reader.GetInt32(9);
 
-                    ordenesCliene.Add(orden);
+                    Cliente cliente = new Cliente();
+                    cliente.IdCliente = idCliente;
+
+                    orden.Cliente = cliente;
+
+                    List<RecetaOrdenada> recetaOrdenada = new List<RecetaOrdenada>();
+
+                    ordenCocina.Orden = orden;
+                    ordenCocina.RecetaOrdenada = recetaOrdenada;
+                    ordenesCliene.Add(ordenCocina);
 
 
                 }
@@ -313,27 +326,83 @@ namespace bacon_desktop.Service
         }
 
 
-        //para juntar las recetas ordenadas y las orden 
-        //public List<OrdenesCliente> getRecetaOdenadaByCliente(int idCliente)
-        //{
+        public List<Cliente> completarClienteBusqueda(List<Cliente> resultados, List<Cliente> all , string busqqueda)
+        {
+            List<Cliente> resultadoFinal = new List<Cliente>();
 
-        //    List<Orden> ordenesCliente = this.getOrdenesByCliente(idCliente);
+            foreach (var cliente in all)
+            {
+                foreach (var buscado in resultados)
+                {
+                    if (cliente.Mesa.NumeroMesa == buscado.Mesa.NumeroMesa)
+                    {
+                        resultadoFinal.Add(cliente);
+                    }
+                }
+            }
+
+            
+
+            return resultadoFinal;
+        }
+
+        //para buscar un mesa 
+        public List<Cliente> getClienteMesaBuscar(string busqueda)
+        {
+            cmd.CommandText = "PACKAGE_ORDEN.PR_BUSCAR_MESA_PAGAR";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int busquedaCliente = 0;
+
+            try
+            {
+                busquedaCliente = int.Parse(busqueda);
+            }
+            catch (Exception)
+            {
+                
+            }
 
 
+            cmd.Parameters.Add("NUMERO_MESA", OracleDbType.Int32).Value = busquedaCliente;
+            cmd.Parameters.Add("ID_CLIENTE", OracleDbType.Int32).Value = busquedaCliente;
+            cmd.Parameters.Add("NOMBRE_CLIENTE", OracleDbType.NVarchar2).Value = busqueda;
 
-        //    foreach (var item in ordenesCliente)
-        //    {
+            cmd.Parameters.Add("CURSOR_CLIENTE", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
-        //        con.Open();
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+
+                OracleDataReader reader = cmd.ExecuteReader();
 
 
+                foreach (var item in reader)
+                {
+                    Cliente cliente = new Cliente();
 
+                    Mesa mesa = new Mesa();
 
-        //    }
+                    mesa.NumeroMesa = reader.GetInt32(0);
 
+                    cliente.Mesa = mesa;
 
-        //}
+                    clientes.Add(cliente);
 
+                }
+
+                con.Close();
+
+                return clientes;
+
+            }
+            catch (Exception)
+            {
+                return clientes;
+            }
+        }
 
         //falta terminar para traer todos las recetas ordenadas por una orden 
         public List<RecetaOrdenada> getRecetaOrdenadaByOrden(int idOrden)
@@ -373,6 +442,62 @@ namespace bacon_desktop.Service
             }
 
         }
+
+
+        //para juntar las recetas ordenadas y las orden 
+        //public List<OrdenesCliente> getRecetaOdenadaByCliente(int idCliente)
+        //{
+
+        //    List<Orden> ordenesCliente = this.getOrdenesByCliente(idCliente);
+
+
+
+        //    foreach (var item in ordenesCliente)
+        //    {
+
+        //        con.Open();
+
+
+
+
+        //    }
+
+
+        //}
+
+
+
+        public int eliminarClienteById(Cliente cliente)
+        {
+            cmd.CommandText = "PACKAGE_CLIENTE.PR_DELETE_CLIENTE_BY_ID";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("P_ID_CLIENTE", OracleDbType.Int32).Value = cliente.IdCliente;
+
+            cmd.Parameters.Add("V_EXITO", OracleDbType.Int32).Direction = ParameterDirection.Output;
+
+            int result = 0;
+
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+
+                result = int.Parse(cmd.Parameters["V_EXITO"].Value.ToString());
+
+                con.Close();
+
+
+                return result;
+
+            }
+            catch (Exception)
+            {
+                return result;
+            }
+        }
+
 
     }
 }
