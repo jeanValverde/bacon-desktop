@@ -41,3 +41,5 @@ C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2.1\win-x64\bacon-desktop.dll
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2.1\win-x64\bacon-desktop.pdb
 C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2.1\win-x64\bacon-desktop.csproj.CopyComplete
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2.1\win-x64\Razor\Views\PagarOrden\ModalRecetaPago.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Release\netcoreapp2.1\win-x64\Razor\Views\PedirOrdenGarzon\Index.cshtml.g.cs
