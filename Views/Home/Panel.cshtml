@@ -43,6 +43,8 @@
     
     <link rel="import" target="garzonNotificacion" href="../GarzonNotificacion/NotificacionesGarzon" />
 
+    <link rel="import" target="vistasStockIndex" href="../VistaStock/VistasStock" />
+
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
 </head>
@@ -100,7 +102,7 @@
                                         <span class="menu-title">Tablero de ejecución</span>
                                     </a>
                                 </li>
-                               
+
                             </ul>
                         </div>
                     </li>
@@ -113,7 +115,44 @@
                         </a>
                         <div class="collapse show" id="garzon" style="">
                             <ul class="nav flex-column sub-menu">
-                                
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!--Menu Bodega-->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#bodega" aria-expanded="true" aria-controls="bodega">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Bodega</span>
+
+                        </a>
+                        <div class="collapse show" id="vistasStock" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#vistasStockIndex" onclick="accion(this)">
+                                        <span class="menu-title">Vistas Stock</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Garzon</span>
+
+                        </a>
+                        <div class="collapse show" id="garzon" style="">
+                            <ul class="nav flex-column sub-menu">
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
                                         <span class="menu-title">Notificaciones</span>

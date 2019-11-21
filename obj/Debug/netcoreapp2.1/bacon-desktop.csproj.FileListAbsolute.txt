@@ -136,7 +136,6 @@ C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.RazorCoreGenerate.cache
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\IndexBar.g.cshtml.cs
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\ModalRecetaBar.g.cshtml.cs
-C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Bar\NotificacionBar.g.cshtml.cs
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\Index.g.cshtml.cs
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\ModalReceta.g.cshtml.cs
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\Cocina\Notificacion.g.cshtml.cs
@@ -149,3 +148,4 @@ C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.dll
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.pdb
 C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\bacon-desktop.csproj.CopyComplete
+C:\Proyecto bacon\bacon-escritorio-ultimo\bacon-desktop\obj\Debug\netcoreapp2.1\Razor\Views\GarzonNotificacion\NotificacionesGarzon.g.cshtml.cs

@@ -1,0 +1,137 @@
+﻿<bacon class="task-bacon">
+    
+   
+    <div class="row mb-2">
+        <div class="col-6 text-center">
+            <button onclick="cargarVistasStock()" class="btn btn-primary ml-2  ">Stock de insumos disponibles</button>
+        </div>
+        <div class="col-6 text-center">
+            <button onclick="cargarVistasStockHistorico()" class="btn btn-primary ml-2  ">Stock de insumos históricos</button>
+        </div>
+        
+    </div>
+
+    <div class="card-columns" id="target-vistaStock">
+        
+      
+        </div>
+            <!--fin row-->
+            <script type="text/javascript">
+                timer = false;
+                function vistasStockIndex() {
+                    cargarVistasStock();
+                    timer = true;
+                }
+
+                function cargarVistasStock() {
+                    //Carga de las vistasStock
+                    ipcRenderer.send("async-cargarVistasStock", 'buscar');
+                    var loader = document.getElementById('loader');
+                    loader.style.visibility = '';
+                    ///fin de carga de vistas
+                    
+                }
+
+                function cargarVistasStockHistorico() {
+                    //Carga de las vistasStock historico
+                    ipcRenderer.send("async-cargarVistasStockHistorico", 'buscar');
+                    var loader = document.getElementById('loader');
+                    loader.style.visibility = '';
+                    ///fin de carga de vistas
+
+                }
+
+                ipcRenderer.on('asynchronous-reply-cargarVistaStockHistorico', (event, arg) => {
+                    console.log(arg);
+                    let vista = "";
+
+                    document.getElementById('target-vistaStock').innerHTML = "";
+
+                    for (var i = 0; i < arg.length; i++) {
+
+                        vista += "<div class='card'> <div class='card-body text-center'>" +
+                            "<div><img src='https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + arg[i].insumo.foto + "' class='img-lg rounded-circle mb-2' alt='profile image'><h4>" + arg[i].insumo.nombreInusmo + "</h4> </div>" +
+                            "<h3 class'display-4'>" + arg[i].cantidad + " " + arg[i].insumo.unidadMedidaInsumo + "</h3>" +
+                            "<div class='border-top pt-3'>" +
+                            "<div class='row'>" +
+                            "<div class='col-6'>" +
+                            "<h6 class='text-primary'><strong>" + formatFechaP(arg[i].fechaCaducidad) + "<sttong></sttong></strong></h6>" +
+                            "<p class='text-primary'>Fecha De Vencimiento</p>" +
+                            "</div>" +
+                            "<div class='col-6'>" +
+                            "<h6>" + formatFechaP(arg[i].fechaIngreso) + "</h6>" +
+                            "<p>Lote</p>" +
+                            "</div></div></div><img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=" + arg[i].insumo.nombreInusmo + " " + arg[i].cantidad + " " + arg[i].insumo.unidadMedidaInsumo + " Vence: " + arg[i].fechaCaducidad + " Lote: " + arg[i].fechaIngreso + "' class='mt-3'></div></div>";
+
+                    }
+
+
+                    document.getElementById('target-vistaStock').innerHTML = vista;
+                    var loader = document.getElementById('loader');
+                    loader.style.visibility = 'hidden';
+
+                });
+
+               
+
+               
+
+
+                ipcRenderer.on('asynchronous-reply-cargarVistaStock', (event, arg) => {
+                    
+                    let vista = "";
+
+                    document.getElementById('target-vistaStock').innerHTML = "";
+
+                    for (var i = 0; i < arg.length; i++) {
+
+                        vista += "<div class='card'> <div class='card-body text-center'>" +
+                            "<div><img src='https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + arg[i].insumo.foto + "' class='img-lg rounded-circle mb-2' alt='profile image'><h4>" + arg[i].insumo.nombreInusmo + "</h4> </div>" +
+                            "<h3 class'display-4'>" + arg[i].cantidad + " " + arg[i].insumo.unidadMedidaInsumo + "</h3>" +
+                            "<p class='text-muted mb-0'>Disponibles</p><p class='mt-2 card-text'></p> " +
+                            "<button onclick='cambiarEstadoNotificacionVistaStock("+ arg[i].idIngresoStock +")' class='btn btn-primary btn-sm mt-3 mb-4'>Utilizado</button>" +
+                            "<div class='border-top pt-3'>" +
+                            "<div class='row'>" +
+                            "<div class='col-6'>" +
+                            "<h6 class='text-primary'><strong>" + formatFechaP(arg[i].fechaCaducidad) + "<sttong></sttong></strong></h6>" +
+                            "<p class='text-primary'>Fecha De Vencimiento</p>" +
+                            "</div>" + 
+                            "<div class='col-6'>" +
+                            "<h6>" + formatFechaP(arg[i].fechaIngreso) + "</h6>" +
+                            "<p>Lote</p>" +
+                            "</div></div></div><img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=" + arg[i].insumo.nombreInusmo + " " + arg[i].cantidad + " " + arg[i].insumo.unidadMedidaInsumo + " Vence: " + arg[i].fechaCaducidad + " Lote: " + arg[i].fechaIngreso +"' class='mt-3'></div></div>";
+                        
+                    }
+                    
+                    
+                    document.getElementById('target-vistaStock').innerHTML = vista;
+                    var loader = document.getElementById('loader');
+                    loader.style.visibility = 'hidden';
+
+                    
+                   
+                });
+
+                function cambiarEstadoNotificacionVistaStock(idIngresoStock) {
+                    
+                    ipcRenderer.send("async-vistasStock-notify-leido", idIngresoStock);
+                    var loader = document.getElementById('loader');
+                    loader.style.visibility = '';
+                    
+                }
+
+
+                ipcRenderer.on('asynchronous-reply-vistasStock-notify-leido', (event, arg) => {
+
+                    vistasStockIndex();
+
+                });
+
+                function formatFechaP(fecha) {
+                    var f = new Date(fecha);
+                    return f.getDay() + '-' + f.getMonth() + '-' + f.getFullYear() ;
+                }
+
+              
+            </script>
+</bacon>
