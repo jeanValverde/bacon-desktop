@@ -96,3 +96,5 @@ C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.dll
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.pdb
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.csproj.CopyComplete
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\DeshabilitarReceta\Index.cshtml.g.cs
+C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\HabilitarReceta\Index.cshtml.g.cs
+C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\TableroMesa\Index.cshtml.g.cs
