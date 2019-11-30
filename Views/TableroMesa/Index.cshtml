@@ -2,10 +2,17 @@
 
 
     <div class="row">
-        <button onclick=cargarMesaHab() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas Habilitadas </button>
-        <button onclick=cargarMesaDesb() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas Deshabilitadas </button>
-        <button onclick=cargarMesaEsp() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas En Espera </button>
+        <div class="col-4">
+            <button onclick=cargarMesaHab() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas Habilitadas </button>
+        </div>
+        <div class="col-4">
+            <button onclick=cargarMesaDesb() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas Deshabilitadas </button>
+        </div>
+        <div class="col-4">
+            <button onclick=cargarMesaEsp() type="button" class="btn btn-primary btn-lg btn-block mt-2"> Mesas En Espera </button>
+        </div>
     </div>
+    </br>
 
 
     <div class="card-columns" id="target-ord-mesaHabilitada" style="column-count: 4">
@@ -37,9 +44,11 @@
 
             for (var i = 0; i < arg.length; i++) {
 
-                mesasHab += "<div class='card'><div class='card-body'><div><h5> Numero de mesa <div class='badge badge-pill badge-primary'>" + arg[i].numeroMesa +
-                    "</div ></h5 ><h5> Cantidad de Asientos <div class='badge badge-pill badge-primary'>" + arg[i].cantidadAsientosMesa +
-                    "</div> </h5><h5> Estado Mesa <div class='badge badge-pill badge-primary'>" + arg[i].estadoMesa + "</div> </h5> <button onclick='modificarMesa(" + arg[i].idMesa + ",2)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Deshabilitar Mesa </button><button onclick='modificarMesa(" + arg[i].idMesa + ",3)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Mesa En Espera </button></div></div></div>";
+
+                mesasHab += "<div class='card'><div class='card-body' style='text-align:center'><h3>Mesa N° " + arg[i].numeroMesa +
+                    "</h3 ></br><div class='row' style='padding:5px'><div class='col-6'><div class='forms-group'><h5 style='height:35px'> Cantidad de Asientos</h5><div class='badge badge-pill badge-primary'>" + arg[i].cantidadAsientosMesa +
+                    "</div></div></div ><div class='col-6'><div class='forms-group'><h5 style='height:35px'>  Estado Mesa</h5><div class='badge badge-pill badge-primary'>" + arg[i].estadoMesa +
+                    "</div></div></div><div class='input-group'><button onclick='modificarMesa(" + arg[i].idMesa + ",2)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Deshabilitar Mesa </button><button onclick='modificarMesa(" + arg[i].idMesa + ",3)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Mesa En Espera </button></div></div></div></div>";
             }
 
             document.getElementById('target-ord-mesaHabilitada').innerHTML = mesasHab;
@@ -65,11 +74,11 @@
 
             for (var i = 0; i < arg.length; i++) {
 
-                mesasHab += "<div class='card'><div class='card-body'><div><h5> ID Cliente <div class='badge badge-pill badge-primary'>" + arg[i].idCliente + 
-                    "</div ></h5 ><h5> Nombre <div class='badge badge-pill badge-primary'>" + arg[i].nombre + 
-                    "</div ></h5 ><h5> fecha Ingreso <div class='badge badge-pill badge-primary'>" + arg[i].fechaIngreso + 
-                    "</div ></h5 ><h5> Numero Mesa <div class='badge badge-pill badge-primary'>" + arg[i].mesa.numeroMesa + 
-                    "</div ></h5 ><h5> Cantidad de Asientos <div class='badge badge-pill badge-primary'>" + arg[i].mesa.cantidadAsientosMesa + 
+                mesasHab += "<div class='card'><div class='card-body'><div><h5> ID Cliente <div class='badge badge-pill badge-primary'>" + arg[i].idCliente +
+                    "</div ></h5 ><h5> Nombre <div class='badge badge-pill badge-primary'>" + arg[i].nombre +
+                    "</div ></h5 ><h5> fecha Ingreso <div class='badge badge-pill badge-primary'>" + arg[i].fechaIngreso +
+                    "</div ></h5 ><h5> Numero Mesa <div class='badge badge-pill badge-primary'>" + arg[i].mesa.numeroMesa +
+                    "</div ></h5 ><h5> Cantidad de Asientos <div class='badge badge-pill badge-primary'>" + arg[i].mesa.cantidadAsientosMesa +
                     "</div> </h5><h5> Estado Mesa <div class='badge badge-pill badge-primary'>" + arg[i].mesa.estadoMesa + "</div> </h5></div></div></div>";
             }
 
@@ -96,9 +105,12 @@
 
             for (var i = 0; i < arg.length; i++) {
 
-                mesasHab += "<div class='card'><div class='card-body'><div><h5> Numero de mesa <div class='badge badge-pill badge-primary'>" + arg[i].numeroMesa +
-                    "</div ></h5 ><h5> Cantidad de Asientos <div class='badge badge-pill badge-primary'>" + arg[i].cantidadAsientosMesa +
-                    "</div> </h5><h5> Estado Mesa <div class='badge badge-pill badge-primary'>" + arg[i].estadoMesa + "</div> </h5></div></div></div>";
+                mesasHab += "<div class='card'><div class='card-body' style='text-align:center'><h3>Mesa N° " + arg[i].numeroMesa +
+                    "</h3 ></br><div class='row' style='padding:5px'><div class='col-6'><div class='forms-group'><h5 style='height:35px'> Cantidad de Asientos</h5><div class='badge badge-pill badge-primary'>" + arg[i].cantidadAsientosMesa +
+                    "</div></div></div ><div class='col-6'><div class='forms-group'><h5 style='height:35px'>  Estado Mesa</h5><div class='badge badge-pill badge-primary'>" + arg[i].estadoMesa +
+                    "</div></div></div></div></div></div>";
+
+
             }
 
             document.getElementById('target-ord-mesaHabilitada').innerHTML = mesasHab;
