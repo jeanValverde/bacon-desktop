@@ -98,3 +98,6 @@ C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\bacon-desktop.cspro
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\DeshabilitarReceta\Index.cshtml.g.cs
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\HabilitarReceta\Index.cshtml.g.cs
 C:\Users\totor\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\TableroMesa\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\DeshabilitarReceta\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\HabilitarReceta\Index.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\TableroMesa\Index.cshtml.g.cs

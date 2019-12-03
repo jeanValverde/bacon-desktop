@@ -18511,23 +18511,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\totor\\.nuget\\packages\\": {},
+    "C:\\Users\\jean\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\totor\\bacon-desktop\\bacon-desktop.csproj",
+      "projectUniqueName": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj",
       "projectName": "bacon-desktop",
-      "projectPath": "C:\\Users\\totor\\bacon-desktop\\bacon-desktop.csproj",
-      "packagesPath": "C:\\Users\\totor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\totor\\bacon-desktop\\obj\\",
+      "projectPath": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj",
+      "packagesPath": "C:\\Users\\jean\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\totor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jean\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

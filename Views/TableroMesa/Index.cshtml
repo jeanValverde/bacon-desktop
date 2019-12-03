@@ -48,7 +48,7 @@
                 mesasHab += "<div class='card'><div class='card-body' style='text-align:center'><h3>Mesa N° " + arg[i].numeroMesa +
                     "</h3 ></br><div class='row' style='padding:5px'><div class='col-6'><div class='forms-group'><h5 style='height:35px'> Cantidad de Asientos</h5><div class='badge badge-pill badge-primary'>" + arg[i].cantidadAsientosMesa +
                     "</div></div></div ><div class='col-6'><div class='forms-group'><h5 style='height:35px'>  Estado Mesa</h5><div class='badge badge-pill badge-primary'>" + arg[i].estadoMesa +
-                    "</div></div></div><div class='input-group'><button onclick='modificarMesa(" + arg[i].idMesa + ",2)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Deshabilitar Mesa </button><button onclick='modificarMesa(" + arg[i].idMesa + ",3)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Mesa En Espera </button></div></div></div></div>";
+                    "</div></div></div><div class='input-group'><button onclick='modificarMesa(" + arg[i].idMesa + ",2)' type='button' class='btn btn-outline-primary btn-lg btn-block mt-2'> Deshabilitar Mesa </button><button onclick='modificarMesa(" + arg[i].idMesa + ",3)' type='button' class='btn btn-primary btn-lg btn-block mt-2'> Mesa En Espera </button></div></div></div></div>";
             }
 
             document.getElementById('target-ord-mesaHabilitada').innerHTML = mesasHab;
