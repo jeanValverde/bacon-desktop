@@ -63,11 +63,20 @@
 
     <link rel="import" target="deshabilitarRecetaIndex" href="../deshabilitarReceta/index" />
 
+
     <link rel="import" target="barIndex" href="../Bar/IndexBar" />
 
     <link rel="import" target="garzonNotificacion" href="../GarzonNotificacion/NotificacionesGarzon" />
 
     <link rel="import" target="pedirOrdenGarzonIndex" href="../PedirOrdenGarzon/index" />
+
+    <link rel="import" target="habilitarRecetaIndex" href="../habilitarReceta/index" />
+
+    <link rel="import" target="tableroMesaIndex" href="../tableroMesa/index" />
+
+
+    @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
+
 
 </head>
 
@@ -192,6 +201,39 @@
                         </div>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#habilitarReceta" aria-expanded="true" aria-controls="habilitarReceta">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">habilitar Receta</span>
+
+                        </a>
+                        <div class="collapse show" id="habilitarReceta" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#habilitarRecetaIndex" onclick="accion(this)">
+                                        <span class="menu-title">habilitar Receta</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#tableroMesa" aria-expanded="true" aria-controls="tableroMesa">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">tablero Mesa</span>
+
+                        </a>
+                        <div class="collapse show" id="tableroMesa" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tableroMesaIndex" onclick="accion(this)">
+                                        <span class="menu-title">Tablero Mesa</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
                 </ul>
 
