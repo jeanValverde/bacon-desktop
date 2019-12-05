@@ -197,7 +197,7 @@
             var montoFinal = document.getElementById("montoFinal").value;
             console.log(montoFinal);
             if (montoFinal !== "") {
-                if (Number.isInteger(montoFinal)) {
+                if (!isNaN(montoFinal) && Number(montoFinal% 1)===0) {
                     if (Number(montoFinal) < 0) {
                         alert('El monto final debe ser mayor o igual a 0');
                     } else {
@@ -205,7 +205,7 @@
                     }
                     
                 } else {
-                    alert('El monto final debe ser un numero entero');
+                    alert('El monto final debe ser un número entero');
                 }
             } else {
                 alert('Ingrese un monto final');
@@ -217,7 +217,7 @@
             if (index == 0) {
                 var montoInicial = Number(document.getElementById("montoInicial").value);
                 var recaudacionHoy = Number(document.getElementById("recaudacionHoy").value);
-                var montoFinal = Number(document.getElementById("montoFinal").value);
+                var montoFinal = Math.trunc(Number(document.getElementById("montoFinal").value));
                 var datos = [{
                     "montoInicial": montoInicial,
                     "recaudacionHoy": recaudacionHoy,
@@ -239,6 +239,7 @@
             } else if (arg == -1) {
                 alert('No se pudo realizar el cierre de caja');
             }
+            cargarUltimoCierreCaja();
             cargarBoletas();
 
 
