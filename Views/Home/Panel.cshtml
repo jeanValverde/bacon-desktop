@@ -29,14 +29,10 @@
     <link rel="stylesheet" href="~/css/efecto-carga-pro.css">
     <!-- endinject -->
 
-
-
     <script type="text/javascript">
         const { ipcRenderer } = require("electron");
         process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
     </script>
-
-
 
     <link rel="import" target="cocinaIndex" href="../Cocina/index" />
 
@@ -44,16 +40,15 @@
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
 
-
     <link rel="import" target="barNotificacion" href="../BarNotificacion/index" />
-    <link rel="import" target="pagoNotificacion" href="../PagoNotificacion/index" />
 
+    <link rel="import" target="pagoNotificacion" href="../PagoNotificacion/index" />
 
     <link rel="import" target="garzonIndex" href="../Garzon/IndexGarzon" />
 
+    <link rel="import" target="finanzasIndexCierreCaja" href="../Finanzas/IndexCierreCaja" />
 
     <link rel="import" target="deshabilitarRecetaIndex" href="../deshabilitarReceta/index" />
-
 
     <link rel="import" target="barIndex" href="../Bar/IndexBar" />
 
@@ -65,8 +60,7 @@
 
     <link rel="import" target="tableroMesaIndex" href="../tableroMesa/index" />
 
-
-    @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
+    <link rel="import" target="IndexInsumosNecesarios" href="../InsumosNecesarios/indexInsumosNecesarios" />
 
 
 </head>
@@ -193,6 +187,39 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#finanzas" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Finanzas</span>
+
+                        </a>
+                        <div class="collapse show" id="finanzas" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
+                                        <span class="menu-title">Cierre Caja</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#finanzas" aria-expanded="true" aria-controls="cocina">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Insumos</span>
+
+                        </a>
+                        <div class="collapse show" id="insumosNece" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#IndexInsumosNecesarios" onclick="accion(this)">
+                                        <span class="menu-title">Nivel de insumos</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#habilitarReceta" aria-expanded="true" aria-controls="habilitarReceta">
                             <i class="mdi mdi-view-headline menu-icon"></i>
                             <span class="menu-title">habilitar Receta</span>
@@ -281,7 +308,6 @@
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
     <!-- End custom js for this page-->
-
     <style type="text/css">
         .page-body-wrapper {
             padding-top: 0px;

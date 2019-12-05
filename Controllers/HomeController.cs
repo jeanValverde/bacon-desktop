@@ -48,9 +48,8 @@ namespace bacon_desktop.Controllers
 
                 if (verificado)
                 {
-
+                    
                     //falta arrancar la sesión 
-
                     ViewData["personal"] = p;
 
                     return View("Panel");
