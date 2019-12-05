@@ -400,7 +400,6 @@
         function cocinaIndex() {
             cargarOrdenes();
             cargarRecetaCantidad();
-            timerIndexCocina = false;
         }
 
          //para cargar las ordenes 
@@ -579,12 +578,6 @@
         }
 
         
-        setInterval(function () {
-            if (timerIndexCocina) {
-               cargarOrdenes();
-               cargarRecetaCantidad();
-            }
-        }, 60000);
 
 
     </script>

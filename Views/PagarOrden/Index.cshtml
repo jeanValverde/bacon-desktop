@@ -380,7 +380,6 @@
             var form = document.getElementById('formCambiarValorPago');
             form.style.visibility = 'hidden';
 
-            timerPagarOrden = false;
             isPagoPersonalizado = false;
 
         }
@@ -733,11 +732,6 @@
 
 
 
-        setInterval(function () {
-             if (timerPagarOrden) {
-                getClientesMesa();
-            }
-        }, 60000);
 
         function stiloAnulacion(anulacion) {
 

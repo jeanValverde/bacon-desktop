@@ -254,8 +254,6 @@
 
             getNotificacionDeCocina();
 
-            timerNotificacionCocina = false;
-
         }
 
 
@@ -362,11 +360,7 @@
 
         });
 
-        setInterval(function () {
-            if (timerNotificacionCocina) {
-                cocinaNotificacion();
-            }
-        }, 60000);
+        
 
     </script>
 

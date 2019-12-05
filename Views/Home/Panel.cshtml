@@ -34,15 +34,6 @@
     <script type="text/javascript">
         const { ipcRenderer } = require("electron");
         process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
-        var timerPagoNotificacion = false;
-        var timerPagarOrden = false;
-        var timerNotificacionGarzon = false;
-        var timerIndexGarzon = false;
-        var timerNotificacionCocina = false;
-        var timerIndexCocina = false;
-        var timerBarNotificacion = false;
-        var timerIndexBar = false;
-        
     </script>
 
 
@@ -97,7 +88,7 @@
                     </div>
                 </div>
                 <ul class="nav">
-
+                    
                     <!--Cocina-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
@@ -317,9 +308,6 @@
 
     <script type="text/javascript">
         function accion(etiqueta) {
-
-
-
             //$('.content-wrapper').empty();
             document.getElementById("contenido").innerHTML = "      "
             var nombreImport = etiqueta.href.split("#")[1];
