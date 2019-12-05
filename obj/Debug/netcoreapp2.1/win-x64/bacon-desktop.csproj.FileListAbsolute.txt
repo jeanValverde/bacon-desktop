@@ -298,3 +298,7 @@ C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Finanzas\ModalBoletaFinanzas.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\InsumosNecesarios\IndexInsumosNecesarios.cshtml.g.cs
 C:\Users\CRISTIAN\Desktop\proyecto_portafolio\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\InsumosNecesarios\ModalBoletaFinanzas.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Finanzas\IndexCierreCaja.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\Finanzas\ModalBoletaFinanzas.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\InsumosNecesarios\IndexInsumosNecesarios.cshtml.g.cs
+C:\Users\jean\Desktop\PORTAFOLIO DE TITULO\bacon-desktop\obj\Debug\netcoreapp2.1\win-x64\Razor\Views\InsumosNecesarios\ModalBoletaFinanzas.cshtml.g.cs
