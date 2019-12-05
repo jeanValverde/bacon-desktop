@@ -1,0 +1,159 @@
+﻿<bacon class="task-bacon">
+
+    
+    <div id="loader-insumos-comprar" style="height: 600px"  class="col-md-12 ">
+        
+            <div class="square-box-loader">
+                <div class="square-box-loader-container">
+                    <div class="square-box-loader-corner-top"></div>
+                    <div class="square-box-loader-corner-bottom"></div>
+                </div>
+                <div class="square-box-loader-square"></div>
+            </div>
+        
+    </div>
+
+    <div id="target-main-insumos-comprar">
+        <div class="row">
+            <div class='card'>
+            <div class='card-body '>
+            <div class="col-12" style="text-align:center">
+                <h4>Nivel de stock de los insumos</h4><br />
+            </div>
+            <div class="col-12" style="text-align:left">
+                <h5>Se detallan todos los insumos por su nivel actual de stock para saber cual insumo debe ser repuesto, indicado con un mensaje, los cuales son 4:</h5><br />
+                <h5><div class='badge badge-success mr-1'><i class='mdi mdi-check-circle-outline'></i> NIVEL STOCK NORMAL</div> : No hay necesidad de comprar este insumo.</h5><br />
+                <h5><div class='badge badge-warning mr-1'><i class='mdi mdi-alert-outline'></i> NIVEL STOCK MEDIO</div> : Se sugiere comprar este insumo.</h5><br />
+                <h5><div class='badge badge-danger mr-1'><i class='mdi mdi-comment-alert-outline'></i> NIVEL STOCK BAJO</div> : Se debe comprar este insumo.</h5><br />
+                <h5><div class='badge badge-danger mr-1'><i class='mdi mdi-comment-remove-outline'></i> STOCK AGOTADO</div> : Se debe comprar este insumo con urgencia.</h5><br />
+            </div>
+                </div>
+            </div>
+            <div id="target-ord-insumos-comprar" class="row" style="padding-top: 12px">
+
+            </div>
+        </div>
+    </div>
+
+        <script type="text/javascript">
+
+
+
+
+            function IndexInsumosNecesarios() {
+                document.getElementById("loader-insumos-comprar").hidden = false;
+                document.getElementById("target-main-insumos-comprar").hidden = true;
+                cargarInsumosComprar();
+
+            }
+            function cargarInsumosComprar() {
+                ipcRenderer.send("async-insumos-comprar", 'buscar');
+            }
+            ipcRenderer.on('asynchronous-reply-insumos-comprar', (event, arg) => {
+
+
+                let inicio = "";
+                document.getElementById('target-ord-insumos-comprar').innerHTML = "";
+                if (arg !== -1) {
+                    for (var i = 0; i < arg.length; i++) {
+                        console.log(arg[i]);
+                        var medio = 0;
+                        inicio += "<div class='col-6' style='padding-top: 12px'>"
+                            + "<div class='card'>"
+                            + "<div class='card-body text-center'>"
+                            + "<img src='https://baconappimagenes.s3-sa-east-1.amazonaws.com/" + arg[i].insumo.foto + "' class='img-lg rounded-circle mb-2' alt='profile image'> "
+                            + "<h4>" + arg[i].insumo.nombreInusmo + "</h4>";
+                        if (arg[i].cantidadHaComprar) {
+                            inicio += "<div class='badge badge-danger mr-1'><h5><i class='mdi mdi-comment-alert-outline'></i> NIVEL STOCK BAJO</h5></div>";
+                        } else {
+                            var stockMaximo = Number(arg[i].insumo.maxStockInsumo);
+                            var cantidad = parseFloat(arg[i].cantidad);
+                            medio = stockMaximo - cantidad;
+                            console.log(medio);
+                            if (arg[i].insumo.stockInsumo < medio) {
+                                inicio += "<div class='badge badge-warning mr-1'><h5><i class='mdi mdi-alert-outline'></i> NIVEL STOCK MEDIO</h5></div>";
+                            } else if (arg[i].insumo.stockInsumo <= 0) {
+                                inicio += "<div class='badge badge-danger mr-1'><h5><i class='mdi mdi-comment-remove-outline'></i> STOCK AGOTADO</h5></div>";
+                            } else {
+                                inicio += "<div class='badge badge-success mr-1'><h5><i class='mdi mdi-check-circle-outline'></i> NIVEL STOCK NORMAL</h5></div>";
+                            }
+
+                        }
+                        inicio += "<table style='width:100%;text-align:left'>"
+                            + "<tr>"
+                            + "<td>"
+                            + "Stock:"
+                            + "</td>"
+                            + "<td>"
+                            + "<div class='badge badge-pill badge-primary'>" + arg[i].insumo.stockInsumo + "</div>"
+                            + " </td>"
+                            + " <td>"
+                            + " <div class='badge badge-outline-primary badge-pill mt-1'> Kilos</div>"
+                            + "</td>"
+                            + "</tr>"
+                            + "<tr>"
+                            + "<td>"
+                            + "  Stock máximo:"
+                            + " </td>"
+                            + "<td>"
+                            + "<div class='badge badge-pill badge-primary'>" + arg[i].insumo.maxStockInsumo + "</div>"
+                            + " </td>"
+                            + " <td>"
+                            + " <div class='badge badge-outline-primary badge-pill mt-1'> Kilos</div>"
+                            + "</td>"
+                            + "</tr>"
+                            + "<tr>"
+                            + "<td>"
+                            + " Cantidad diaria necesaria:"
+                            + "</td>"
+                            + "<td>"
+                            + "<div class='badge badge-pill badge-primary'>" + arg[i].cantidad + "</div>"
+                            + "</td>"
+                            + "<td>"
+                            + "<div class='badge badge-outline-primary badge-pill mt-1'> Kilos</div>"
+                            + "</td>"
+                            + " </tr>"
+                            + "<tr>"
+                            + "<td>"
+                            + " Cantidad de " + arg[i].insumo.unidadMedidaInsumo + " que deben comprar:"
+                            + "</td>"
+                            + "<td>";
+                        if (arg[i].cantidadHaComprar) {
+                            inicio += "<div class='badge badge-pill badge-primary'>" + arg[i].cantidadHaComprar + "</div>";
+                        } else {
+                            inicio += "<div class='badge badge-pill badge-primary'>0</div>";
+                        }
+                        inicio += "</td>"
+                            + "<td>"
+                            + "<div class='badge badge-outline-primary badge-pill mt-1'> Kilos</div>"
+                            + "</td>"
+                            + "</tr>"
+                            + "</table>"
+                            + "</div>"
+                            + "</div>"
+                            + "</div>";
+                    }
+                } else {
+                    inicio += "<div class='col-12' style='text-align:center'>"
+                        + "<div class=' icon-card-primary'>"
+                        + "<div class='card-body text-center'>"
+                        + " <h2>No se han registrado insumos en el Sistema</h2>"
+                        + "<br/><br/>"
+                        + "<h5>Favor de avisar al administrador que se deben registrar insumos en el sistema.</h5>"
+                        + "</div>"
+                        + "</div>"
+                        + "</div>";
+                }
+                document.getElementById("loader-insumos-comprar").hidden = true;
+                document.getElementById("target-main-insumos-comprar").hidden = false;
+                document.getElementById('target-ord-insumos-comprar').innerHTML = inicio;
+                inicio = "";
+
+
+
+            });
+
+
+
+        </script>
+</bacon>

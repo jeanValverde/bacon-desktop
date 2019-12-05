@@ -35,23 +35,23 @@
 
 
     <script type="text/javascript">
-
+        
         function barIndex() {
-            cargarOrdenes();
-            cargarRecetaCantidad();
-            timer = true;
+            cargarOrdenesDeBar();
+            cargarRecetaCantidadDeBar();
+            timerIndexBar = true;
         }
 
         //para cargar las ordenes
-        function cargarOrdenes() {
-            //Carga de las ordenes Bar
-            ipcRenderer.send("async-receta", 'buscar');
+        function cargarOrdenesDeBar() {
+            //Carga de las ordenes Cocina
+            ipcRenderer.send("async-receta-bar", 'buscar');
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
             ///fin de carga de ordenes
         }
 
-        ipcRenderer.on('asynchronous-reply-receta', (event, arg) => {
+        ipcRenderer.on('asynchronous-reply-receta-bar', (event, arg) => {
 
             let message = "";
 
@@ -84,7 +84,7 @@
                     + "<h4 class='card-title mt-3'>Descripción</h4>"
                     + "<p class='card-text'>" + arg[i].orden.descripcion + "</p>"
                     + "<table class='table mb-0'><thead><tr><th class='text-right'>"
-                    + "<button type='button' onclick='completarOrden(" + arg[i].orden.idOrden + ")' class='btn btn-outline-success btn-fw'>Orden Lista</button></th>"
+                    + "<button type='button' onclick='completarOrdenDeBar(" + arg[i].orden.idOrden + ")' class='btn btn-outline-success btn-fw'>Orden Lista</button></th>"
                     + "</tr></thead></table></div></div>";
 
             }
@@ -101,21 +101,21 @@
 
 
         //para cargar la cantidad de receta
-        function cargarRecetaCantidad() {
-            ipcRenderer.send("async-receta-cantidad", 'buscar');
+        function cargarRecetaCantidadDeBar() {
+            ipcRenderer.send("async-receta-cantidad-bar", 'buscar');
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
         }
 
 
-        ipcRenderer.on('asynchronous-reply-receta-cantidad', (event, arg) => {
+        ipcRenderer.on('asynchronous-reply-receta-cantidad-bar', (event, arg) => {
 
             let message = "";
 
             document.getElementById('target-ord-bar-cantidad').innerHTML = "";
 
             for (var i = 0; i < arg.length; i++) {
-                message += "<tr><td class='pl-0'><a href='#23423423' onclick='modalReceta( " + arg[i].receta.idReceta + "  )' >" + cortarTextoConPuntos(arg[i].receta.nombreReceta, 34) + "</a>"
+                message += "<tr><td class='pl-0'><a href='#23423423' onclick='modalRecetaBar( " + arg[i].receta.idReceta + "  )' >" + cortarTextoConPuntos(arg[i].receta.nombreReceta, 34) + "</a>"
                     + "</td><td class='pr-0 text-right'><div class='badge badge-pill badge-primary'>" + arg[i].cantidad + "</div></td></tr>";
             }
 
@@ -129,14 +129,14 @@
 
 
         //para completar la orden
-        function completarOrden(idOrden) {
-            ipcRenderer.send("async-receta-completarOrden", idOrden);
+        function completarOrdenDeBar(idOrden) {
+            ipcRenderer.send("async-receta-completarOrden-bar", idOrden);
             var loader = document.getElementById('loader');
             loader.style.visibility = '';
         }
 
 
-        ipcRenderer.on('asynchronous-reply-receta-completarOrden', (event, arg) => {
+        ipcRenderer.on('asynchronous-reply-receta-completarOrden-bar', (event, arg) => {
 
             barIndex();
 
@@ -145,8 +145,8 @@
 
 
 
-        function modalReceta(idReceta) {
-            ipcRenderer.send("modalReceta-window", idReceta);
+        function modalRecetaBar(idReceta) {
+            ipcRenderer.send("modalRecetaBar-window", idReceta);
         }
 
 
@@ -217,9 +217,9 @@
 
 
         setInterval(function () {
-            if (timer) {
-                cargarOrdenes();
-                cargarRecetaCantidad();
+            if (timerIndexBar) {
+                cargarOrdenesDeBar();
+                cargarRecetaCantidadDeBar();
             }
         }, 60000);
 
@@ -228,3 +228,4 @@
 
 
 </bacon>
+

@@ -1,7 +1,7 @@
 ﻿<bacon class="task-bacon">
     <!--inicio row-->
     <div class="row">
-        <div class="col-md-3 grid-margin">
+        <div class="col-md-4 grid-margin">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Totalidad de recetas ordenadas</h4>
@@ -22,9 +22,9 @@
             </div>
         </div>
 
-        <div class="col-md-9 grid-margin">
+        <div class="col-md-8 grid-margin"  >
 
-            <div class="card-columns" id="target-ord-cocina">
+            <div class="card-columns" id="target-ord-cocina" style="column-count:2;">
                 <!--inicio tarjeta de ordenes--->
                 
 
@@ -41,10 +41,11 @@
 
     <script type="text/javascript" >
 
+        
         function cocinaIndex() {
             cargarOrdenes();
             cargarRecetaCantidad();
-            timer = true;
+            timerIndexCocina = true;
         }
 
          //para cargar las ordenes 
@@ -224,7 +225,7 @@
 
         
         setInterval(function () {
-            if (timer) {
+            if (timerIndexCocina) {
                cargarOrdenes();
                cargarRecetaCantidad();
             }

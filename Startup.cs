@@ -63,9 +63,9 @@ namespace bacon_desktop
             //        template: "{controller=Home}/{action=Index}/{id?}");
             //});
 
-            //runBaconDesktop();
+            //runBaconDesktop(); 
 
-            loggerFactory.AddConsole();
+           /// loggerFactory.AddConsole();
 
             if (env.IsDevelopment())
             {

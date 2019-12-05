@@ -1,115 +1,107 @@
 ﻿<bacon class="task-bacon">
 
-    
-        <div class="email-wrapper wrapper">
-            <div class="row align-items-stretch">
 
-                <div class="mail-list-container col-md-3 pt-4 pb-4 border-right bg-white">
-                    <div class="border-bottom pb-2 mb-3 px-3">
-                        <div class="form-group">
-                            <input class="form-control w-100" type="search" placeholder="Número Mesa o Nombre De Cliente" id="Mail-rearch">
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary btn-lg btn-block">
-                                <i class="mdi mdi-account-search"></i>
-                                Buscar
-                            </button>
-                        </div>
+    <div class="email-wrapper wrapper">
+        <div class="row align-items-stretch">
+
+            <div class="mail-list-container col-md-3 pt-4 pb-4 border-right bg-white">
+                
+                @*<div class="border-bottom pb-2 mb-3 px-3">
+                    <div class="form-group">
+                        <input class="form-control w-100" type="search" placeholder="Número Mesa o Nombre De Cliente" id="Mail-rearch">
                     </div>
-                    <div class="mail-list">
-                        <div class="form-check"> <label class="form-check-label"> <input type="radio" name="mesa" class="form-check-input"> <i class="input-helper"></i></label></div>
-                        <div class="content">
-                            <p class="sender-name">David Moore</p>
-                            <p class="message_text">Número Mesa #23.</p>
-                        </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">
+                            <i class="mdi mdi-account-search"></i>
+                            Buscar
+                        </button>
                     </div>
-                    <div class="mail-list">
-                        <div class="form-check"> <label class="form-check-label"> <input type="radio" name="mesa" class="form-check-input" checked=""> <i class="input-helper"></i></label></div>
-                        <div class="content">
-                            <p class="sender-name">Microsoft Account Password Change</p>
-                            <p class="message_text">Change the password for your Microsoft Account using the security code 35525</p>
-                        </div>
-                    </div>
-                    <div class="mail-list">
-                        <div class="form-check"> <label class="form-check-label"> <input type="radio" name="mesa" class="form-check-input"> <i class="input-helper"></i></label></div>
-                        <div class="content">
-                            <p class="sender-name">Sophia Lara</p>
-                            <p class="message_text">Hello, last date for registering for the annual music event is closing in</p>
-                        </div>
-                    </div>
+                </div>*@
+
+                
+                <div id="cargaClientesOrden">
+
+                    
+
                 </div>
 
+               
+
+            </div>
 
 
-                <div class="mail-view d-none d-md-block col-md-9 col-lg-9 bg-white">
+
+            <div class="mail-view d-none d-md-block col-md-9 col-lg-9 bg-white">
 
 
 
-                    <div class="message-body">
-                        <div class="sender-details">
-                            <div class="details">
-                                <p class="msg-subject">
-                                    David Moore - Ingresado (May 8, 2017 - May 14, 2017)
-                                </p>
-                                <p class="sender-email">
-                                    Número de Cliente:
-                                    <a href="#">234</a>
-                                    &nbsp;<i class="mdi mdi-account-multiple-plus"></i>
-                                </p>
-                            </div>
+                <div class="message-body" id="formCambiarValorPago" >
+                    <div class="sender-details">
+                        <div class="details">
+                            <p class="msg-subject" id="NombreClienteDetalle" >
+                                <!---nombre del cliente-->
+                            </p>
+                            <p class="sender-email">
+                                Número de Cliente:
+                                <a href="#" id="numeroClienteDetalle" ><!----numero de cliente--></a>
+                                &nbsp;<i class="mdi mdi-account-multiple-plus"></i>
+                            </p>
                         </div>
-                        <div class="message-content">
-                            <div class="row">
-                                <div class="col-md-3">
+                    </div>
+                    <div class="message-content">
+                        <div class="row">
+                            <div class="col-md-3">
 
-                                    <div class="card icon-card-primary mt-4">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
-                                                    <i class="mdi mdi-cash-multiple"></i>
-                                                </div>
-                                                <p class="font-weight-medium mb-0">Total a Pagar</p>
+                                <div class="card icon-card-primary mt-4">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
+                                                <i class="mdi mdi-cash-multiple"></i>
                                             </div>
-                                            <div class="d-flex align-items-center mt-3 flex-wrap">
-                                                <h3 class="font-weight-normal mb-0 mr-2">$59.4670</h3>
-                                            </div>
+                                            <p class="font-weight-medium mb-0">Total</p>
                                         </div>
-                                    </div>
-
-                                    <div class="card icon-card-success mt-4">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
-                                                    <i class="mdi mdi-coffee"></i>
-                                                </div>
-                                                <p class="font-weight-medium mb-0">Cantidad de ordenes</p>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-3 flex-wrap">
-                                                <h3 class="font-weight-normal mb-0 mr-2">2</h3>
-                                            </div>
-                                            <small class="font-weight-medium d-block mt-2">Total de ordenes emitidas por el cliente</small>
+                                        <div class="d-flex align-items-center mt-3 flex-wrap">
+                                            <h3 class="font-weight-normal mb-0 mr-2" id="totalPagarClienteDetalle"></h3>
                                         </div>
+                                        <small class="font-weight-medium d-block mt-2">Total de a pagar</small>
                                     </div>
-
-                                    <div class="card icon-card-info mt-4">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
-                                                    <i class="mdi mdi-basket"></i>
-                                                </div>
-                                                <p class="font-weight-medium mb-0">Recetas</p>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-3 flex-wrap">
-                                                <h3 class="font-weight-normal mb-0 mr-2">5</h3>
-                                            </div>
-                                            <small class="font-weight-medium d-block mt-2">Total de recetas ordenadas por el cliente</small>
-                                        </div>
-                                    </div>
-
                                 </div>
 
-                                <div class="col-md-9 grid-margin stretch-card mt-4">
-                                    <div class="card" style="border: 0px; border-radius:0px;">
+                                <div class="card icon-card-dark mt-4">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
+                                                <i class="mdi mdi-coffee"></i>
+                                            </div>
+                                            <p class="font-weight-medium mb-0">Mesa</p>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-3 flex-wrap">
+                                            <h3 class="font-weight-normal mb-0 mr-2" id="mesaNumeroDetalleCliente" ><!--numero--></h3>
+                                        </div>
+                                        <small class="font-weight-medium d-block mt-2">Mesa asignada al cliente</small>
+                                    </div>
+                                </div>
+
+                                <div class="card icon-card-success mt-4">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon mb-0 mb-md-2 mb-xl-0 mr-2">
+                                                <i class="mdi mdi-coffee"></i>
+                                            </div>
+                                            <p class="font-weight-medium mb-0">Cantidad de ordenes</p>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-3 flex-wrap">
+                                            <h3 class="font-weight-normal mb-0 mr-2" id="totalOrdenClienteDetalle"><!--numero--></h3>
+                                        </div>
+                                        <small class="font-weight-medium d-block mt-2">Total de ordenes emitidas por el cliente</small>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-9 grid-margin stretch-card mt-4">
+                                <div class="card" style="border: 0px; border-radius:0px;">
+                                    
                                         <div class="card-body">
                                             <h4 class="card-title">Cambiar el monto a pagar</h4>
                                             <p class="card-description">
@@ -122,7 +114,7 @@
                                                         <div class="input-group">
                                                             <div class="form-check form-check-danger">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="ExampleRadio4" id="ExampleRadio4">
+                                                                    <input type="radio" class="form-check-input" required name="isOperacionCambiarValor" value="0" disabled id="isOperacionCambiarValorUno">
                                                                     Aumentar Monto
                                                                     <i class="input-helper"></i>
                                                                 </label>
@@ -135,7 +127,7 @@
                                                         <div class="input-group">
                                                             <div class="form-check form-check-danger">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="ExampleRadio4" id="ExampleRadio4">
+                                                                    <input type="radio" class="form-check-input" required name="isOperacionCambiarValor" value="1" disabled id="isOperacionCambiarValorDos">
                                                                     Disminuir Monto
                                                                     <i class="input-helper"></i>
                                                                 </label>
@@ -152,7 +144,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text bg-primary text-white">$</span>
                                                     </div>
-                                                    <input type="text" class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)">
+                                                    <input type="text" class="form-control form-control-lg" required id="valorAcambiar" disabled aria-label="Amount (to the nearest dollar)">
                                                     <div class="input-group-append">
 
                                                     </div>
@@ -162,121 +154,388 @@
 
                                             <div class="form-group">
                                                 <label for="exampleTextarea1">Motivo del cambio (*)</label>
-                                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                                <textarea class="form-control" id="motivoCambiarValor" disabled required rows="4"></textarea>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <button type="button" class="btn btn-dark btn-lg btn-block">
+                                                    <button type="button" onclick="habilitarCambiarValor()"  class="btn btn-dark btn-lg btn-block">
                                                         Cambiar el Monto a Pagar
                                                     </button>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <button type="button" class="btn btn-primary btn-lg btn-block">
-                                                        <i class="mdi mdi-account"></i>
-                                                        Pagar
-                                                    </button>
+                                                <div class="col-md-6" id="btnPagarTotalCliente">
+
                                                 </div>
                                             </div>
 
                                         </div>
-                                    </div>
+                                 
                                 </div>
-
                             </div>
 
                         </div>
-                        <div class="attachments-sections">
 
-                            <div class="card-columns" style="column-count: 1;">
+                    </div>
 
+                    <div class="attachments-sections">
 
-                                <!--inicio tarjeta de ordenes--->
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mt-3">Orden número #452</h4>
+                        <div class="card-columns" style="column-count: 1;">
 
-                                        <div class="badge badge-outline-primary">30 minutos</div>
+                            <!--inicio tarjeta de ordenes--->
+                            @*<div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mt-3">Orden número #452</h4>
 
-                                        <div class="badge badge-outline-danger">TOTAL</div>
-                                        <div class="badge badge-outline-danger">$30.000</div>
-                                        <br>
-                                        <table class="table mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th class="pl-0">Receta</th>
-                                                    <th class="text-center">Precio Unitario</th>
-                                                    <th class="text-center">Cantidad</th>
-                                                    <th class="text-center">Precio</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pl-0"><a href="#">Rounded Primary</a></td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">2</div>
-                                                    </td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                    </td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <h4 class="card-title mt-3">Descripción</h4>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                    </div>
+                                    <div class="badge badge-outline-primary">30 minutos</div>
+
+                                    <div class="badge badge-outline-danger">TOTAL</div>
+                                    <div class="badge badge-outline-danger">$30.000</div>
+                                    <br>
+                                    <table class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="pl-0">Receta</th>
+                                                <th class="text-center">Precio Unitario</th>
+                                                <th class="text-center">Cantidad</th>
+                                                <th class="text-center">Precio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="pl-0"><a href="#">Rounded Primary</a></td>
+                                                <td class="pr-0 text-center">
+                                                    <div class="badge badge-pill badge-outline-primary">2</div>
+                                                </td>
+                                                <td class="pr-0 text-center">
+                                                    <div class="badge badge-pill badge-outline-primary">$2.000</div>
+                                                </td>
+                                                <td class="pr-0 text-center">
+                                                    <div class="badge badge-pill badge-outline-primary">$2.000</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h4 class="card-title mt-3">Descripción</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
                                 </div>
-                                <!--fin tarjeta de ordenes--->
-                                <!--inicio tarjeta de ordenes--->
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mt-3">Orden número #452</h4>
+                            </div>*@
+                            <!--fin tarjeta de ordenes--->
 
-                                        <div class="badge badge-outline-primary">30 minutos</div>
 
-                                        <div class="badge badge-outline-danger">TOTAL</div>
-                                        <div class="badge badge-outline-danger">$30.000</div>
-                                        <br>
-                                        <table class="table mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th class="pl-0">Receta</th>
-                                                    <th class="text-center">Precio Unitario</th>
-                                                    <th class="text-center">Cantidad</th>
-                                                    <th class="text-center">Precio</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pl-0"><a href="#">Rounded Primary</a></td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">2</div>
-                                                    </td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                    </td>
-                                                    <td class="pr-0 text-center">
-                                                        <div class="badge badge-pill badge-outline-primary">$2.000</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <h4 class="card-title mt-3">Descripción</h4>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                    </div>
-                                </div>
-                                <!--fin tarjeta de ordenes--->
-
-                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    
 
+        </div>
+    </div>
+     
+
+    <script type="text/javascript">
+
+        let isPagoPersonalizado = false;
+
+        
+        function pagarOrdenIndex() {
+
+            getClientesMesa();
+
+            var form = document.getElementById('formCambiarValorPago');
+            form.style.visibility = 'hidden';
+
+            timerPagarOrden = true;
+
+        }
+
+        function getClientesMesa() {
+
+            ipcRenderer.send("async-pagarOrden-clientes", 'buscar');
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+
+        }
+
+        ipcRenderer.on('asynchronous-reply-pagarOrden-clientes', (event, arg) => {
+
+            let message = "";
+
+            document.getElementById('cargaClientesOrden').innerHTML = ""; 
+
+
+            for (var i = 0; i < arg.length; i++) {
+
+                message += "<div class='mail-list'><div class='form-check'> <label class='form-check-label'> "
+                    + "<input onclick='cargarCliente(" + arg[i].idCliente + ")' type='radio' name='mesa' class='form-check-input'> "
+                    + "<i class='input-helper'></i></label></div> <div class='content'><p class=sender-name'>" + arg[i].nombre + "</p>"
+                    + "<p class='message_text'> Número Mesa #" + arg[i].mesa.numeroMesa + "</p></div></div>";
+
+            }
+
+
+            document.getElementById('cargaClientesOrden').innerHTML = message;
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+        function clienteDetalle(idCliente) {
+
+            ipcRenderer.send("async-pagarOrden-clienteDetalle", idCliente);
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+
+        }
+
+        ipcRenderer.on('asynchronous-reply-pagarOrden-clienteDetalle', (event, arg) => {
+
+
+            let nombreCliente = document.getElementById('NombreClienteDetalle');
+
+            
+            nombreCliente.innerHTML = arg.nombre + " - Ingresado (" + arg.fechaIngreso + ")";
+
+
+            
+            let numeroClienteDetalle = document.getElementById('numeroClienteDetalle');
+
+            
+            numeroClienteDetalle.innerHTML = arg.idCliente;
+
+
+            let mesaNumeroDetalleCliente = document.getElementById('mesaNumeroDetalleCliente');
+
+
+            mesaNumeroDetalleCliente.innerHTML = arg.mesa.numeroMesa;
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+         function totalOrdenesClienteDetalle(idCliente) {
+
+            ipcRenderer.send("async-pagarOrden-totalOrdenClienteDetalle", idCliente);
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+
+         }
+
+         ipcRenderer.on('asynchronous-reply-pagarOrden-totalOrdenClienteDetalle', (event, arg) => {
+
+             let totalOrdenClienteDetalle = document.getElementById('totalOrdenClienteDetalle');
+
+             totalOrdenClienteDetalle.innerHTML = arg;
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+         });
+
+
+          function totalApagarClienteDetalle(idCliente) {
+
+            ipcRenderer.send("async-pagarOrden-totalPagarClienteDetalle", idCliente);
+            var loader = document.getElementById('loader');
+            loader.style.visibility = '';
+
+         }
+
+         ipcRenderer.on('asynchronous-reply-pagarOrden-totalPagarClienteDetalle', (event, arg) => {
+
+             let totalPagarClienteDetalle = document.getElementById('totalPagarClienteDetalle');
+
+             totalPagarClienteDetalle.innerHTML = "$" + dar_formato(arg);
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+
+        });
+
+        function cargarCliente(idCliente) {
+
+            var btnPagarTotalCliente = document.getElementById('btnPagarTotalCliente');
+
+            btnPagarTotalCliente.innerHTML = "";
+
+            var form = document.getElementById('formCambiarValorPago');
+            form.style.visibility = 'hidden';
+
+            clienteDetalle(idCliente);
+            totalOrdenesClienteDetalle(idCliente);
+            totalApagarClienteDetalle(idCliente);
+            habilitarDeshabilitarInput(true);
+
+            //var form = document.getElementById('formCambiarValorPago');
+
+            form.style.visibility = '';
+
+            let button = "<button onclick='pagarCliente(" + idCliente + ")' type = 'submit' class='btn btn-primary btn-lg btn-block' >"
+                       + "<i class='mdi mdi-account'></i>Pagar</button>";
+
+            btnPagarTotalCliente.innerHTML = button;
+            
+
+        }
+
+
+        function habilitarCambiarValor() {
+             ipcRenderer.send("information-dialog-cambiarTotalPagar");
+        }
+
+        ipcRenderer.on("information-dialog-reply-cambiarTotalPagar", (sender, index) => {
+           
+
+            if (index == 0) {
+
+                isPagoPersonalizado = true;
+                document.getElementById('isOperacionCambiarValorUno').checked = true;
+                habilitarDeshabilitarInput(false);
+            } 
+
+
+        });
+
+        function habilitarDeshabilitarInput(isActive) {
+            habilitar(document.getElementById('isOperacionCambiarValorUno'));
+            habilitar(document.getElementById('isOperacionCambiarValorDos'));
+            habilitar(document.getElementById('valorAcambiar'));
+            habilitar(document.getElementById('motivoCambiarValor'));
+
+            function habilitar(input) {
+                input.disabled = isActive;
+            }
+
+        }
+
+
+
+        function pagarCliente(idCliente) {
+                        
+            if (isPagoPersonalizado) {
+
+                var checkUno = document.getElementById('isOperacionCambiarValorUno');
+                var checkDos = document.getElementById('isOperacionCambiarValorDos');
+
+                var valorAcambiar = document.getElementById('valorAcambiar');
+
+                var motivoCambiarValor = document.getElementById('motivoCambiarValor');
+
+                if (valorAcambiar.value.trim() != "" && valorAcambiar.value >= 1) {
+
+                    if (motivoCambiarValor.value.trim() != "") {
+                        //0: sumar - 1: restar
+                        var operacion = 0;
+
+                        if (checkDos.checked) {
+                            operacion = 1;
+                        }
+
+
+                         var datos = [
+                             {
+                            "id_cliente" : idCliente , 
+                            "valor_a_pagar": valorAcambiar.value,
+                            "operacion": operacion , 
+                            "motivo": motivoCambiarValor.value
+                          }
+                         ]
+
+                      
+                        ipcRenderer.send("async-pagarOrden-pagarClientePersonalizado", datos);
+                        var loader = document.getElementById('loader');
+                        loader.style.visibility = '';
+
+
+                    } else {
+
+                        alert('Motivo es obligatorio');
+
+                    }
+
+                } else {
+
+                    alert('Valor es obligatorio y mayor a uno');
+
+                }
+
+
+                //alert(checkUno.checked);
+                //alert(checkDos.checked);
+
+
+
+            } else {
+
+                ipcRenderer.send("async-pagarOrden-pagarClienteOrdenes", idCliente);
+                var loader = document.getElementById('loader');
+                loader.style.visibility = '';
+
+            }
+
+        }
+
+       
+        ipcRenderer.on('asynchronous-reply-pagarOrden-pagarClientePersonalizado', (event, arg) => {
+
+            console.log(arg);
+
+            var loader = document.getElementById('loader');
+            loader.style.visibility = 'hidden';
+        });
+
+        ipcRenderer.on('asynchronous-reply-pagarOrden-pagarClienteOrdenes', (event, arg) => {
+
+            pagarOrdenIndex();
+
+        });
+
+
+
+        setInterval(function () {
+             if (timerPagarOrden) {
+                getClientesMesa();
+            }
+        }, 60000);
+
+
+        function dar_formato(num) {
+
+                var cadena = "";
+                var aux;
+
+                var cont = 1, m, k;
+
+                if (num < 0)
+                    aux = 1;
+                else
+                    aux = 0;
+
+                num = num.toString();
+
+                for (m = num.length - 1; m >= 0; m--) {
+
+                    cadena = num.charAt(m) + cadena;
+
+                    if (cont % 3 == 0 && m > aux)
+                        cadena = "." + cadena;
+                    else
+                        cadena = cadena;
+
+                    if (cont == 3)
+                        cont = 1;
+                    else
+                        cont++;
+
+                }
+
+                cadena = cadena.replace(/.,/, ",");
+
+                return cadena;
+
+        }
+
+
+
+    </script>
 </bacon>

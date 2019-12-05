@@ -10,30 +10,33 @@ namespace bacon_desktop.Service
 {
     public class BarService
     {
-
         private ConnectionBacon connectionBacon;
         private OracleConnection con;
         private OracleCommand cmd;
 
-        //Instanciacion de los accesos a datos
+
+        //siempre instacion los accesos a datos 
         public BarService()
         {
-            //Conexion a la base de datos
+            //instacia la conexion a la base de datos  
             connectionBacon = new ConnectionBacon();
 
-            //Se obtiene la conexion
+            // obtenemos a conexion 
             con = connectionBacon.Connection();
 
-
+            //para crear hacer sentencias o llamarlas    
             cmd = con.CreateCommand();
         }
 
+        //Obtener las notificaciones de ordenes de Bar
         public List<OrdenBar> getOrdenesByEstadoEnBar()
         {
             List<OrdenBar> ordenesBar = new List<OrdenBar>();
 
+
             try
             {
+
                 cmd.CommandText = "PACKAGE_ORDEN.PR_LISTAR_ORDENES_EN_BAR";
 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -45,6 +48,7 @@ namespace bacon_desktop.Service
 
                 foreach (var item in reader)
                 {
+
                     Orden orden = new Orden();
 
                     orden.IdOrden = reader.GetInt32(0);
@@ -66,28 +70,31 @@ namespace bacon_desktop.Service
 
                     orden.Hora = reader.GetString(6);
 
+
                     OrdenBar ordenBar = new OrdenBar();
 
-                    List<RecetaOrdenada> recetasOrdenadas = new List<RecetaOrdenada>();
+                    List<RecetaOrdenada> recetasOrdeadas = new List<RecetaOrdenada>();
 
                     ordenBar.Orden = orden;
-                    ordenBar.Orden = orden;
 
-                    ordenBar.RecetaOrdenada = recetasOrdenadas;
+                    ordenBar.RecetaOrdenada = recetasOrdeadas;
 
                     ordenesBar.Add(ordenBar);
+
                 }
 
                 con.Close();
 
                 return ordenesBar;
+
+
             }
             catch (Exception)
             {
                 OrdenBar ordenBar = new OrdenBar();
 
                 Orden orden = new Orden();
-                orden.Descripcion = "Error: ENTRO EN EL CASH DE PROCEDURE";
+                orden.Descripcion = "Error: ENTTRO EN EL CASH DE PROCEDURE";
                 ordenBar.Orden = orden;
 
                 ordenesBar.Add(ordenBar);
@@ -98,10 +105,9 @@ namespace bacon_desktop.Service
                 return ordenesBar;
             }
 
-
         }
 
-        public List<RecetaCantidad> obtenerRecetasWithCantidad(List<OrdenBar> ordenes)
+        public List<RecetaCantidad> obtenerRecetasWithCantidadBar(List<OrdenBar> ordenes)
         {
             List<RecetaCantidad> listaReceta = new List<RecetaCantidad>();
 
@@ -133,7 +139,7 @@ namespace bacon_desktop.Service
                 RecetaCantidad recetaCantidad = new RecetaCantidad();
 
                 recetaCantidad.Receta = item;
-                recetaCantidad.Cantidad = calcularCantidadRecetas(ordenes, item.IdReceta); ;
+                recetaCantidad.Cantidad = calcularCantidadRecetasBar(ordenes, item.IdReceta); ;
                 listaReceta.Add(recetaCantidad);
             }
 
@@ -141,7 +147,7 @@ namespace bacon_desktop.Service
             return listaReceta;
         }
 
-        private int calcularCantidadRecetas(List<OrdenBar> ordenes, int idReceta)
+        private int calcularCantidadRecetasBar(List<OrdenBar> ordenes, int idReceta)
         {
 
             int cantidad = 0;
@@ -164,22 +170,22 @@ namespace bacon_desktop.Service
             return cantidad;
         }
 
-        public List<OrdenBar> completarOrden(List<OrdenBar> ordenes)
+        public List<OrdenBar> completarOrdenBar(List<OrdenBar> ordenes)
         {
             List<OrdenBar> ordenesFinal = new List<OrdenBar>();
 
 
             //TRAE TODO DE LA BASE DE DATOS 
-            List<RecetaOrdenada> recetaOrdenada = this.getRecetasOrdenadasByIdOrden();
+            List<RecetaOrdenada> recetaOrdenada = this.getRecetasOrdenadasByIdOrdenBar();
 
 
 
             foreach (var item in ordenes)
             {
-                //PARA AGREGAR A LA LISTA DE UNA ORDEN 
+                //PARA AREGAR A LA LISTA DE UNA ORDEN 
                 List<RecetaOrdenada> recetaOrdenadaBar = new List<RecetaOrdenada>();
 
-                //LA ORDEN DE bar 
+                //LA ORDEN DE COCINA 
                 OrdenBar ord = new OrdenBar();
 
                 ord.Orden = item.Orden;
@@ -200,7 +206,8 @@ namespace bacon_desktop.Service
             return ordenesFinal;
         }
 
-        public List<RecetaOrdenada> getRecetasOrdenadasByIdOrden()
+
+        public List<RecetaOrdenada> getRecetasOrdenadasByIdOrdenBar()
         {
 
             cmd.CommandText = "PACKAGE_ORDEN.PR_LIST_RECTAS_ORDENS_ALL";
@@ -275,7 +282,8 @@ namespace bacon_desktop.Service
 
         }
 
-        public Receta getRecetaById(Int32 id)
+        //receta by id
+        public Receta getRecetaByIdBar(Int32 id)
         {
             cmd.CommandText = "PACKAGE_RECETA.RECETA_BY_ID";
 
@@ -329,8 +337,10 @@ namespace bacon_desktop.Service
             }
         }
 
+
+
         //receta by id
-        public List<Ingrediente> getIngredientesByIdReceta(Int32 id)
+        public List<Ingrediente> getIngredientesByIdRecetaBar(Int32 id)
         {
             cmd.CommandText = "PACKAGE_INGREDIENTE.FILTRO_INGREDIENTE_RECETA";
 
@@ -386,7 +396,9 @@ namespace bacon_desktop.Service
             }
         }
 
-        public int completarOrden(int idOrden)
+
+        //eliminar con confirmacion 
+        public int completarOrdenBar(int idOrden)
         {
             cmd.CommandText = "PACKAGE_ORDEN.PR_COMPLETAR_ORDEN";
 
@@ -414,8 +426,9 @@ namespace bacon_desktop.Service
             }
         }
 
+
         //insertar Notificacion
-        public int insertarNotificacion(Notificacion notificacion)
+        public int insertarNotificacionBar(Notificacion notificacion)
         {
             cmd.CommandText = "PACKAGE_NOTIFICACION.PR_INSERTAR_NOTIFICACION";
 
@@ -447,155 +460,7 @@ namespace bacon_desktop.Service
             }
         }
 
-        public List<Notificacion> getNotificacionDeBar()
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_DE_COCINA";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_NOTIFICACIONES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-            List<Notificacion> notificaciones = new List<Notificacion>();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
 
 
-                foreach (var item in reader)
-                {
-
-                    Notificacion notificacion = new Notificacion();
-
-                    notificacion.IdNotificacion = reader.GetInt32(0);
-                    notificacion.Descripcion = reader.GetString(1);
-                    notificacion.Estado = reader.GetInt32(2);
-                    Rol rol = new Rol();
-                    rol.Id_rol = reader.GetInt32(3);
-                    notificacion.Rol = rol;
-                    notificacion.Fecha = reader.GetDateTime(4);
-                    notificacion.Asunto = reader.GetString(5);
-
-                    notificaciones.Add(notificacion);
-
-                }
-
-                con.Close();
-
-                return notificaciones;
-
-
-            }
-            catch (Exception)
-            {
-                return notificaciones;
-            }
-        }
-
-        public List<Notificacion> getNotificacionParaBar()
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_PARA_COCINA";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_NOTIFICACIONES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-            List<Notificacion> notificaciones = new List<Notificacion>();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-
-                foreach (var item in reader)
-                {
-
-                    Notificacion notificacion = new Notificacion();
-
-                    notificacion.IdNotificacion = reader.GetInt32(0);
-                    notificacion.Descripcion = reader.GetString(1);
-                    notificacion.Estado = reader.GetInt32(2);
-                    Rol rol = new Rol();
-                    rol.Id_rol = reader.GetInt32(3);
-                    notificacion.Rol = rol;
-                    notificacion.Fecha = reader.GetDateTime(4);
-                    notificacion.Asunto = reader.GetString(5);
-
-                    notificaciones.Add(notificacion);
-
-                }
-
-                con.Close();
-
-                return notificaciones;
-
-
-            }
-            catch (Exception)
-            {
-                return notificaciones;
-            }
-        }
-
-        public List<Notificacion> obtenerTodasNotificacionesOrdenFecha(List<Notificacion> de, List<Notificacion> para)
-        {
-            List<Notificacion> notificacions = new List<Notificacion>();
-
-            foreach (var item in de)
-            {
-                notificacions.Add(item);
-            }
-
-            foreach (var item in para)
-            {
-                notificacions.Add(item);
-            }
-
-            notificacions = notificacions.OrderByDescending(o => o.Fecha).ToList();
-
-            return notificacions;
-
-        }
-
-
-        //UPDATE NOTIFY ESTADO 
-        public int cambiarEstadoNotificacion(int idNotificacion)
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_SET_ESTADO_NOTIFY";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_ID_NOTIFICACION", OracleDbType.Int32).Value = idNotificacion;
-
-            cmd.Parameters.Add("V_EXITO", OracleDbType.Int32).Direction = ParameterDirection.Output;
-
-            try
-            {
-
-                cmd.ExecuteNonQuery();
-
-                int result = int.Parse(cmd.Parameters["V_EXITO"].Value.ToString());
-
-                con.Close();
-
-                return result;
-
-            }
-            catch (Exception)
-            {
-                return -1;
-            }
-        }
     }
-    
 }
-        
-    
-
-
-
-
-
-

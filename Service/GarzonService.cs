@@ -1,11 +1,9 @@
 ﻿using bacon_desktop.Models;
-using bacon_desktop.Models;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace bacon_desktop.Service
 {
@@ -27,84 +25,6 @@ namespace bacon_desktop.Service
 
             //para crear hacer sentencias o llamarlas    
             cmd = con.CreateCommand();
-        }
-
-        public List<OrdenCocina> getOrdenesByEstadoEnCocina()
-        {
-            List<OrdenCocina> ordenesCocina = new List<OrdenCocina>();
-
-
-            try
-            {
-
-                cmd.CommandText = "PACKAGE_ORDEN.PR_LISTAR_ORDENES_EN_COCINA";
-
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add("CURSOR_ORDENES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-                foreach (var item in reader)
-                {
-
-                    Orden orden = new Orden();
-
-                    orden.IdOrden = reader.GetInt32(0);
-                    orden.Descripcion = reader.GetString(1);
-                    orden.TiempoPreparacion = reader.GetInt32(2);
-
-                    Cliente cliente = new Cliente();
-
-                    Mesa mesa = new Mesa();
-
-                    mesa.NumeroMesa = reader.GetInt32(3);
-
-                    cliente.Mesa = mesa;
-
-                    orden.Cliente = cliente;
-
-                    orden.FechaCompleta = reader.GetString(4);
-                    orden.Fecha = reader.GetString(5);
-
-                    orden.Hora = reader.GetString(6);
-
-
-                    OrdenCocina ordenCocina = new OrdenCocina();
-
-                    List<RecetaOrdenada> recetasOrdeadas = new List<RecetaOrdenada>();
-
-                    ordenCocina.Orden = orden;
-
-                    ordenCocina.RecetaOrdenada = recetasOrdeadas;
-
-                    ordenesCocina.Add(ordenCocina);
-
-                }
-
-                con.Close();
-
-                return ordenesCocina;
-
-
-            }
-            catch (Exception)
-            {
-                OrdenCocina ordenCocina = new OrdenCocina();
-
-                Orden orden = new Orden();
-                orden.Descripcion = "Error: ENTTRO EN EL CASH DE PROCEDURE";
-                ordenCocina.Orden = orden;
-
-                ordenesCocina.Add(ordenCocina);
-                ordenesCocina.Add(ordenCocina);
-                ordenesCocina.Add(ordenCocina);
-                ordenesCocina.Add(ordenCocina);
-
-                return ordenesCocina;
-            }
-
         }
 
         public List<OrdenGarzon> listarOrdenesListarParaServir()
@@ -358,61 +278,7 @@ namespace bacon_desktop.Service
 
         }
 
-        //receta by id
-        public Receta getRecetaById(Int32 id)
-        {
-            cmd.CommandText = "PACKAGE_RECETA.RECETA_BY_ID";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_ID_RECETA", OracleDbType.Int32).Value = id;
-            cmd.Parameters.Add("P_RECETAS_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-
-            Receta receta = new Receta();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-
-                foreach (var item in reader)
-                {
-
-                    receta.IdReceta = reader.GetInt32(0);
-                    receta.NombreReceta = reader.GetString(1);
-                    receta.DescripcionReceta = reader.GetString(2);
-                    receta.DuracionPreparacion = reader.GetInt32(3);
-                    receta.DisponibilidadReceta = reader.GetInt32(4);
-                    receta.PrecioReceta = reader.GetInt32(5);
-                    receta.CantidadPrepacionDiaria = reader.GetInt32(6);
-                    receta.Foto = reader.GetString(7);
-                    receta.TipoReceta = reader.GetInt32(8);
-
-                    CategoriaReceta categoriaReceta = new CategoriaReceta();
-
-                    categoriaReceta.IdCategoriaReceta = reader.GetInt32(9);
-                    categoriaReceta.DescripcionCategoriaReceta = reader.GetString(10);
-
-                    receta.CategoriaReceta = categoriaReceta;
-
-
-                    break;
-                }
-
-                con.Close();
-
-                return receta;
-
-
-            }
-            catch (Exception)
-            {
-                return receta;
-            }
-        }
-
+       
         public Orden getOrdenById(Int32 id)
         {
             cmd.CommandText = "PACKAGE_ORDEN.ORDEN_BY_ID";
@@ -464,64 +330,6 @@ namespace bacon_desktop.Service
             }
         }
 
-
-
-        //receta by id
-        public List<Ingrediente> getIngredientesByIdReceta(Int32 id)
-        {
-            cmd.CommandText = "PACKAGE_INGREDIENTE.FILTRO_INGREDIENTE_RECETA";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_ID_RECETA", OracleDbType.Int32).Value = id;
-            cmd.Parameters.Add("P_INGREDIENTES_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-
-            List<Ingrediente> ingredientes = new List<Ingrediente>();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-
-                foreach (var item in reader)
-                {
-
-                    Ingrediente ingrediente = new Ingrediente();
-                    Insumo insumo = new Insumo();
-
-
-                    insumo.IdInsumo = reader.GetInt32(0);
-                    insumo.NombreInusmo = reader.GetString(1);
-                    insumo.DescripcionInusmo = reader.GetString(2);
-                    insumo.StockInsumo = reader.GetInt32(3);
-                    insumo.UnidadMedidaInsumo = reader.GetString(4);
-                    insumo.MinStockInsumo = reader.GetInt32(5);
-                    insumo.MaxStockInsumo = reader.GetInt32(6);
-                    insumo.Foto = reader.GetString(7);
-
-                    ingrediente.IdIngrediente = reader.GetInt32(8);
-                    Receta receta = new Receta();
-                    ingrediente.Receta = receta;
-                    ingrediente.Cantidad = reader.GetInt32(9);
-
-                    ingrediente.Insumo = insumo;
-
-                    ingredientes.Add(ingrediente);
-                }
-
-                con.Close();
-
-                return ingredientes;
-
-
-            }
-            catch (Exception)
-            {
-                return ingredientes;
-            }
-        }
 
 
         //eliminar con confirmacion 
@@ -619,154 +427,6 @@ namespace bacon_desktop.Service
         }
 
 
-
-        //
-        public List<Notificacion> getNotificacionDeCocina()
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_DE_COCINA";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_NOTIFICACIONES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-            List<Notificacion> notificaciones = new List<Notificacion>();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-
-                foreach (var item in reader)
-                {
-
-                    Notificacion notificacion = new Notificacion();
-
-                    notificacion.IdNotificacion = reader.GetInt32(0);
-                    notificacion.Descripcion = reader.GetString(1);
-                    notificacion.Estado = reader.GetInt32(2);
-                    Rol rol = new Rol();
-                    rol.Id_rol = reader.GetInt32(3);
-                    notificacion.Rol = rol;
-                    notificacion.Fecha = reader.GetDateTime(4);
-                    notificacion.Asunto = reader.GetString(5);
-
-                    notificaciones.Add(notificacion);
-
-                }
-
-                con.Close();
-
-                return notificaciones;
-
-
-            }
-            catch (Exception)
-            {
-                return notificaciones;
-            }
-        }
-
-
-
-        //
-        public List<Notificacion> getNotificacionParaCocina()
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_LISTAR_PARA_COCINA";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_NOTIFICACIONES", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-            List<Notificacion> notificaciones = new List<Notificacion>();
-
-            try
-            {
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-
-                foreach (var item in reader)
-                {
-
-                    Notificacion notificacion = new Notificacion();
-
-                    notificacion.IdNotificacion = reader.GetInt32(0);
-                    notificacion.Descripcion = reader.GetString(1);
-                    notificacion.Estado = reader.GetInt32(2);
-                    Rol rol = new Rol();
-                    rol.Id_rol = reader.GetInt32(3);
-                    notificacion.Rol = rol;
-                    notificacion.Fecha = reader.GetDateTime(4);
-                    notificacion.Asunto = reader.GetString(5);
-
-                    notificaciones.Add(notificacion);
-
-                }
-
-                con.Close();
-
-                return notificaciones;
-
-
-            }
-            catch (Exception)
-            {
-                return notificaciones;
-            }
-        }
-
-
-
-        public List<Notificacion> obtenerTodasNotificacionesOrdenFecha(List<Notificacion> de, List<Notificacion> para)
-        {
-            List<Notificacion> notificacions = new List<Notificacion>();
-
-            foreach (var item in de)
-            {
-                notificacions.Add(item);
-            }
-
-            foreach (var item in para)
-            {
-                notificacions.Add(item);
-            }
-
-            notificacions = notificacions.OrderByDescending(o => o.Fecha).ToList();
-
-            return notificacions;
-
-        }
-
-
-        //UPDATE NOTIFY ESTADO 
-        public int cambiarEstadoNotificacion(int idNotificacion)
-        {
-            cmd.CommandText = "PACKAGE_NOTIFICACION.PR_SET_ESTADO_NOTIFY";
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("P_ID_NOTIFICACION", OracleDbType.Int32).Value = idNotificacion;
-
-            cmd.Parameters.Add("V_EXITO", OracleDbType.Int32).Direction = ParameterDirection.Output;
-
-            try
-            {
-
-                cmd.ExecuteNonQuery();
-
-                int result = int.Parse(cmd.Parameters["V_EXITO"].Value.ToString());
-
-                con.Close();
-
-                return result;
-
-            }
-            catch (Exception)
-            {
-                return -1;
-            }
-        }
 
     }
 }
