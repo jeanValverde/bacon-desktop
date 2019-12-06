@@ -40,10 +40,12 @@
 
     <link rel="import" target="pagarOrdenIndex" href="../PagarOrden/index" />
     <link rel="import" target="barIndex" href="../Bar/IndexBar" />
-    
+
     <link rel="import" target="garzonNotificacion" href="../GarzonNotificacion/NotificacionesGarzon" />
 
     <link rel="import" target="vistasStockIndex" href="../VistaStock/VistasStock" />
+
+    <link rel="import" target="calcularPedidosManuales" href="../CalcularPedidosManuales/IndexCalcularPedidosManuales" />
 
     @*<link rel="import" target="pruebaDos" href="pruebaDos.html">*@
 
@@ -142,8 +144,19 @@
 
                             </ul>
                         </div>
+                        <div class="collapse show" id="calcularPedidosManuales" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#calcularPedidosManuales" onclick="accion(this)">
+                                        <span class="menu-title">Pedidos Insumos</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </li>
 
+                    <!--Menu Bo-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
                             <i class="mdi mdi-view-headline menu-icon"></i>
