@@ -37,6 +37,27 @@ namespace bacon_desktop.Controllers
                 }
             });
 
+            Electron.IpcMain.On("async-filtroByNombreInsumo", (args) =>
+            {
+                var mainWindow = Electron.WindowManager.BrowserWindows.First();
+
+                CalcularPedidosManualesService calcularPedidos = new CalcularPedidosManualesService();
+                try
+                {
+                    var nombreInusmo = args.ToString();
+                    List<Insumo> insumo = calcularPedidos.filtroInsumoByNombre(nombreInusmo);
+
+                    calcularPedidos = null;
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-filtroByNombreInsumo", insumo);
+                }
+                catch (Exception ex)
+                {
+
+                    Electron.IpcMain.Send(mainWindow, "asynchronous-reply-filtroByNombreInsumo", ex.Message);
+                }
+            });
+
             //Cargar las vistas de calcular Pedidos manuales 
             Electron.IpcMain.On("async-cargarVistasInsumosPedidos", (args) =>
             {

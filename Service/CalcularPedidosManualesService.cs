@@ -118,14 +118,60 @@ namespace bacon_desktop.Service
                     insumo.UnidadMedidaInsumo = reader.GetString(4);
                     insumo.MaxStockInsumo = reader.GetInt32(5);
                     insumo.MinStockInsumo = reader.GetInt32(6);
-                    InsumoPedido insumoPe = new InsumoPedido();
-                    insumoPe.IdInsumoPedido = reader.GetInt32(7);
-                    insumoPe.CantidadInsumo = reader.GetInt32(8);
-                    insumoPe.EstadoInsumoPedido = reader.GetInt32(9);
+                   
 
                     insumos.Add(insumo);
 
                     
+                }
+                con.Close();
+                return insumos;
+            }
+            catch (Exception)
+            {
+
+                return insumos;
+            }
+        }
+
+        public List<Insumo> filtroInsumoByNombre(string nombreInusmo)
+        {
+            List<Insumo> insumos = new List<Insumo>();
+
+            try
+            {
+                cmd.CommandText = "PACKAGE_INSUMO.FILTRO_NOMBRE_INSUMO";
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("P_NOMBRE_INSUMO", OracleDbType.Varchar2).Value = nombreInusmo;
+
+                cmd.Parameters.Add("P_INSUMOS_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                foreach (var item in reader)
+                {
+                    Insumo insumo = new Insumo();
+                    insumo.IdInsumo = reader.GetInt32(0);
+                    insumo.NombreInusmo = reader.GetString(1);
+                    insumo.DescripcionInusmo = reader.GetString(2);
+                    insumo.StockInsumo = reader.GetInt32(3);
+                    insumo.UnidadMedidaInsumo = reader.GetString(4);
+                    insumo.MinStockInsumo = reader.GetInt32(5);
+                    insumo.MaxStockInsumo = reader.GetInt32(6);
+                    insumo.Foto = reader.GetString(7);
+                    
+                    
+                    
+                   
+                   
+
+
+                    insumos.Add(insumo);
+
+
                 }
                 con.Close();
                 return insumos;
