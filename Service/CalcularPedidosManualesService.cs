@@ -64,6 +64,34 @@ namespace bacon_desktop.Service
             }
 
         }
+        public int modificarInsumoPedido(int idInsumoPedido, int cantidad)
+        {
+            cmd.CommandText = "PACKAGE_BODEGA.PR_MODIFICAR_INSUMO_PEDIDO";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("P_ID_INSUMO_PEDIDO", OracleDbType.Int32).Value = idInsumoPedido;
+
+            cmd.Parameters.Add("P_CANTIDAD_INSUMO", OracleDbType.Int32).Value = cantidad;
+            cmd.Parameters.Add("P_ESTADO_INSUMO_PEDIDO", OracleDbType.Int32).Value = 0;
+
+            
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+
+        }
 
         public List<Insumo> listarInsumos()
         {
@@ -197,8 +225,50 @@ namespace bacon_desktop.Service
 
                 return insumo;
             }
-        } 
+        }
+        public InsumoPedido retornarInsumoPedidoPorId(int idInsumoPedido)
+        {
 
-        
+            InsumoPedido insumoPedido = new InsumoPedido();
+            try
+            {
+                cmd.CommandText = "PACKAGE_INSUMO_PEDIDO.PR_INSUMO_PEDIDO";
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("P_CURSOR_INSUMO_PROVEEDOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("P_ID_INSUMO", OracleDbType.Int32).Value = idInsumoPedido;
+
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                foreach (var item in reader)
+                {
+                    
+                    insumoPedido.IdInsumoPedido = reader.GetInt32(0);
+                    insumoPedido.CantidadInsumo = reader.GetInt32(1);
+                    insumoPedido.EstadoInsumoPedido = reader.GetInt32(2);
+                    Insumo insumo = new Insumo();
+                    insumo.IdInsumo = reader.GetInt32(3);
+                    insumoPedido.Insumo = insumo;
+
+
+                   
+                    break;
+
+                }
+                con.Close();
+                return insumoPedido;
+
+            }
+
+            catch (Exception)
+            {
+                insumoPedido = null;
+                return insumoPedido;
+            }
+        }
+
+
     }
 }
