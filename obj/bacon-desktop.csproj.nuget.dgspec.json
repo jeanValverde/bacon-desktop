@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj": {}
+    "C:\\Users\\CRISTIAN\\Desktop\\bacon-desktop\\bacon-desktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj": {
+    "C:\\Users\\CRISTIAN\\Desktop\\bacon-desktop\\bacon-desktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj",
+        "projectUniqueName": "C:\\Users\\CRISTIAN\\Desktop\\bacon-desktop\\bacon-desktop.csproj",
         "projectName": "bacon-desktop",
-        "projectPath": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\bacon-desktop.csproj",
-        "packagesPath": "C:\\Users\\jean\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jean\\Desktop\\PORTAFOLIO DE TITULO\\bacon-desktop\\obj\\",
+        "projectPath": "C:\\Users\\CRISTIAN\\Desktop\\bacon-desktop\\bacon-desktop.csproj",
+        "packagesPath": "C:\\Users\\CRISTIAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CRISTIAN\\Desktop\\bacon-desktop\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CRISTIAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -11,23 +11,17 @@
                     </div>
                 </div>
                 <div id="target-insumos">
-              
-
-
-
-
-
-
-
 
 
                 </div>
 
             </div>
             <div class="mail-view d-none d-md-block col-md-9 col-lg-9 bg-white">
-
+                
                 <div class="message-body">
+                    
                     <div style="visibility:hidden;display:none" id="target-cargaInsumos">
+                        <h2>Agregar insumo pedido</h2>
                         <div class="sender-details">
                             <img class="img-sm rounded-circle mr-3" id="imagen" src="https://via.placeholder.com/43x43" alt="">
                             <input type="hidden" id="IdInsumo" />
@@ -54,28 +48,24 @@
 
                         </div>
                     </div>
+
                     <div style="visibility:hidden;display:none" id="target-modificarInsumos">
+                        <h2>Modificar insumo pedido</h2>
                         <div class="sender-details">
-                            <img class="img-sm rounded-circle mr-3" id="imagen" src="https://via.placeholder.com/43x43" alt="">
-                            <input type="hidden" id="IdInsumo" />
+                            <img class="img-sm rounded-circle mr-3" id="imagen2" src="https://via.placeholder.com/43x43" alt="">
+                            <input type="hidden" id="IdInsumoPedido2" />
                             <div class="details">
-                                <p class="msg-subject" id="nombre">Cacao</p>
-                                <p id="stock" class="sender-email">Stock Actual: 10 Kilos / Stock Minimo: 3 kilos / Stock Maximo: 15 kilos </p>
+                                <p class="msg-subject" id="nombre2"></p>
+                                <p id="stock2" class="sender-email"></p>
                             </div>
                         </div>
                         <div class="sender-details">
                             <form class="col-md-12 forms-sample mb-4">
                                 <div class="form-group">
                                     <label for="exampleInputName1">Cantidad de insumo (kilos/litros)</label>
-                                    <input type="text" class="form-control" id="cantidadInsumo" placeholder="23">
+                                    <input type="text" class="form-control" id="cantidadInsumo2" placeholder="23">
                                 </div>
-
-
-
-
-
-
-                                <button onclick="agregarInsumo()" class="btn btn-primary mr-2">Pedir insumo a administración</button>
+                                <button onclick="modificarInsumo()" class="btn btn-primary mr-2">Modificar insumo pedido</button>
                                 <button class="btn btn-behance btn-light">Cancelar</button>
                             </form>
 
@@ -114,7 +104,6 @@
         function calcularPedidosManuales() {
             cargarCalcularPedidosManuales();
             cargarInsumosPedidos();
-            cargarInsumosParaAgregar();
             cargarDatosInsumo();
             timer = true;
         }
@@ -176,21 +165,11 @@
 
         ipcRenderer.on('asynchronous-reply-cargarVistasInsumosId', (event, arg) => {
           
-            
-
-           
             document.getElementById('target-cargaInsumos').style.visibility = '';
             document.getElementById('target-cargaInsumos').style.display = '';
             document.getElementById('imagen').src = 'https://baconappimagenes.s3-sa-east-1.amazonaws.com/' + arg.foto;
             document.getElementById('nombre').innerHTML = arg.nombreInusmo;
             document.getElementById('stock').innerHTML = "Stock actual: " + arg.stockInsumo + arg.unidadMedidaInsumo + " /Stock Minimo: " + arg.minStockInsumo + arg.unidadMedidaInsumo + " /Stock Maximo: " + arg.maxStockInsumo + arg.unidadMedidaInsumo;  
-
-            
-            
-
-
-            
-
 
            
             var loader = document.getElementById('loader');
@@ -222,9 +201,9 @@
                 }
                 
                 vista += "</td ><td><div class='btn-group' role='group' aria-label='Basic example'>" +
-                    "<button type='button' id='btnEditar' onclick='editarInsumos(" + arg[i].insumo.idInsumo +")' class='btn btn-primary'><i class='mdi mdi-table-edit'></i></button></div></td></tr>"
-
-                console.log(arg[i].estadoInsumoPedido);
+                    "<button type='button' id='btnEditar' onclick='cargarInsumoPedidoHaEditar(" + arg[i].idInsumoPedido + ")' class='btn btn-primary'><i class='mdi mdi-table-edit'></i></button></div></td></tr>";
+                
+                
 
 
             }
@@ -237,34 +216,28 @@
 
 
         });
-
-          //boton
-        function editarInsumos(idInsumo) {
-            //var btnEditarInsumo = document.getElementById('btnEditar');
-            //btnEditarInsumo.innerHTML = "";
-
-            ipcRenderer.send("async-cargarVistasInsumosId", idInsumo);
+        
+          
+        function cargarInsumoPedidoHaEditar(idInsumo) {
+            
+            console.log(idInsumo);
+            ipcRenderer.send("async-cargarInsumoPedidoHaEditar", idInsumo);
             
         }
 
-        ipcRenderer.on('asynchronous-reply-cargarVistasInsumosId', (event, arg) => {
-
+        ipcRenderer.on('asynchronous-reply-cargarInsumoPedidoHaEditar', (event, arg) => {
+            document.getElementById('target-cargaInsumos').style.visibility = 'hidden';
+            document.getElementById('target-cargaInsumos').style.display = 'none';
+            document.getElementById('target-modificarInsumos').style.visibility = '';
+            document.getElementById('target-modificarInsumos').style.display = '';
 
             console.log(arg);
 
-            document.getElementById('target-cargaInsumos').style.visibility = '';
-            document.getElementById('target-cargaInsumos').style.display = '';
-            document.getElementById('imagen').src = 'https://baconappimagenes.s3-sa-east-1.amazonaws.com/' + arg.foto;
-            document.getElementById('IdInsumo').value = arg.idInsumo;
-            document.getElementById('nombre').innerHTML = arg.nombreInusmo;
-            document.getElementById('stock').innerHTML = "Stock actual: " + arg.stockInsumo + +arg.unidadMedidaInsumo + " /Stock Minimo: " + arg.minStockInsumo + arg.unidadMedidaInsumo + " /Stock Maximo: " + arg.maxStockInsumo + arg.unidadMedidaInsumo;
-
-
-
-
-
-
-
+            document.getElementById('imagen2').src = 'https://baconappimagenes.s3-sa-east-1.amazonaws.com/' + arg.insumo.foto;
+            document.getElementById('IdInsumoPedido2').value = arg.idInsumoPedido;
+            document.getElementById('nombre2').innerHTML = arg.insumo.nombreInusmo;
+            document.getElementById('stock2').innerHTML = "Stock actual: " + arg.insumo.stockInsumo +arg.insumo.unidadMedidaInsumo + " /Stock Minimo: " + arg.insumo.minStockInsumo + arg.insumo.unidadMedidaInsumo + " /Stock Maximo: " + arg.insumo.maxStockInsumo + arg.insumo.unidadMedidaInsumo;
+            document.getElementById('cantidadInsumo2').value = arg.cantidadInsumo;
 
 
             var loader = document.getElementById('loader');
@@ -319,6 +292,24 @@
             cargarInsumosPedidos();
 
         });
+        function modificarInsumo() {
+            var idInsumoPedido2 = document.getElementById('IdInsumoPedido2').value;
+            var cantidad = document.getElementById('cantidadInsumo2').value;
+            var datos = [{ "idInsumoPedido": idInsumoPedido2, "cantidad": cantidad }];
+            ipcRenderer.send("async-modificarInsumoPedido", datos);
+        }
+         ipcRenderer.on('asynchronous-reply-modificarInsumoPedido', (event, arg) => { 
+
+            if (arg === 1) {
+                alert('Se modificó insumo pedido')
+            } else {
+                alert('No se pudo modificar insumo pedido');
+            }
+
+            cargarInsumosPedidos();
+
+        });
+        
 
 
        
