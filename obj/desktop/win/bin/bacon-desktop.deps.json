@@ -29,7 +29,11 @@
           "Microsoft.AspNetCore.App": "2.1.13",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.13",
+<<<<<<< HEAD:obj/desktop/win/bin/bacon-desktop.deps.json
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
+=======
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
+>>>>>>> Felipe:bin/Debug/netcoreapp2.1/win-x64/bacon-desktop.deps.json
           "Oracle.ManagedDataAccess.Core": "2.19.31"
         },
         "compile": {
@@ -3277,7 +3281,11 @@
           "Microsoft.AspNetCore.App": "2.1.13",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.13",
+<<<<<<< HEAD:obj/desktop/win/bin/bacon-desktop.deps.json
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
+=======
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
+>>>>>>> Felipe:bin/Debug/netcoreapp2.1/win-x64/bacon-desktop.deps.json
           "Oracle.ManagedDataAccess.Core": "2.19.31"
         },
         "runtime": {

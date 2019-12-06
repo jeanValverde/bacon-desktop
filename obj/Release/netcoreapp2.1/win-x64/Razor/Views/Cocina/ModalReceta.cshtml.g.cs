@@ -62,12 +62,20 @@ using bacon_desktop.Models;
             WriteLiteral("<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(18, 695, false);
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c290dd6348b4a7e9a4d87a163f3d612", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "409a662a4455466f954ac534a7dfdd5b", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 BeginContext(24, 220, true);
                 WriteLiteral("\r\n    <!-- Required meta tags -->\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <title>BACON Restaurante</title>\r\n    <!-- base:css -->\r\n    ");
                 EndContext();
                 BeginContext(244, 76, false);
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1431a5fc0d824e5fb3170465238acb13", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "449e834c7297468eb83953213bc0bbff", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -86,7 +94,11 @@ using bacon_desktop.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(326, 76, false);
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "577948e6d42445db92b627e49b1551b4", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1dc058b3e5894269937a95d2cd6937fb", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -105,7 +117,11 @@ using bacon_desktop.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(408, 67, false);
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fc6e719582c54a9fb44747f4b58d39ad", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d3982f7a3be943fba7f8aa6b78336ec3", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -124,7 +140,11 @@ using bacon_desktop.Models;
                 WriteLiteral("\r\n    <!-- endinject -->\r\n    <!-- plugin css for this page -->\r\n    <!-- End plugin css for this page -->\r\n    <!-- inject:css -->\r\n    ");
                 EndContext();
                 BeginContext(612, 68, false);
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "aafd2bf94f0144989d5a42b256ee864e", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8f769e1ab15c4b20925b76b343646fc4", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -167,9 +187,15 @@ using bacon_desktop.Models;
 
 #line default
 #line hidden
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
             BeginContext(980, 4747, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c7d250e623d4adab93108b707e3c446", async() => {
                 BeginContext(995, 589, true);
+=======
+            BeginContext(958, 4747, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f0d3561c05d4aff963a8b65668c6abf", async() => {
+                BeginContext(973, 589, true);
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 WriteLiteral(@"
     <div class="""">
         <!-- partial:../../partials/_navbar.html -->
@@ -368,8 +394,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
     <!-- base:js -->
     ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5233, 58, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cc6337dc2c2468ca5484416d8ca78d1", async() => {
+=======
+                BeginContext(5211, 58, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f55d0afbc439465cb73826eca7de9431", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -386,8 +417,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5291, 132, true);
                 WriteLiteral("\r\n    <!-- endinject -->\r\n    <!-- Plugin js for this page-->\r\n    <!-- End plugin js for this page-->\r\n    <!-- inject:js -->\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5423, 42, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34049c8fa85a427f8dd7f62161979ba6", async() => {
+=======
+                BeginContext(5401, 42, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0657100d7f5d469bae24ed14853e4bac", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -404,8 +440,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5465, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5471, 50, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5c3c67305054168b71f66a19601ef5c", async() => {
+=======
+                BeginContext(5449, 50, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76595264bf6c4245aaedbe719e25ba13", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -422,8 +463,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5521, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5527, 40, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bfb3e634c450429081b0d5d24adc18ac", async() => {
+=======
+                BeginContext(5505, 40, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d2e7a9ab64f449492721d575fe74dc3", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -440,8 +486,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5567, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5573, 40, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3bdaaeacfed84910a7beeded1a9e15c4", async() => {
+=======
+                BeginContext(5551, 40, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f70369f78444ed8b2f66e8e3ab52788", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -458,8 +509,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5613, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5619, 40, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9ccea02de8b46518dacb6442c4ca2f4", async() => {
+=======
+                BeginContext(5597, 40, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77b9dbbda2ce4b31b442be04cc4c4003", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -476,8 +532,13 @@ WriteAttributeValue("", 1735, foto, 1735, 5, false);
                 BeginContext(5659, 8, true);
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
+<<<<<<< HEAD:obj/Release/netcoreapp2.1/win-x64/Razor/Views/Cocina/ModalReceta.cshtml.g.cs
                 BeginContext(5667, 45, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3d38baca7814f29be8c2b1c48ee8b37", async() => {
+=======
+                BeginContext(5645, 45, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4add3e8f55d548c691ae5045e598abfe", async() => {
+>>>>>>> Felipe:obj/Debug/netcoreapp2.1/Razor/Views/Cocina/ModalReceta.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -62,6 +62,9 @@
 
     <link rel="import" target="IndexInsumosNecesarios" href="../InsumosNecesarios/indexInsumosNecesarios" />
 
+    <link rel="import" target="vistasStockIndex" href="../VistaStock/VistasStock" />
+
+    <link rel="import" target="calcularPedidosManuales" href="../CalcularPedidosManuales/IndexCalcularPedidosManuales" />
 
 </head>
 
@@ -193,6 +196,53 @@
 
                         </a>
                         <div class="collapse show" id="finanzas" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
+                                        <span class="menu-title">Notificaciones</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!--Menu Bodega-->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#bodega" aria-expanded="true" aria-controls="bodega">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Bodega</span>
+
+                        </a>
+                        <div class="collapse show" id="vistasStock" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#vistasStockIndex" onclick="accion(this)">
+                                        <span class="menu-title">Vistas Stock</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="collapse show" id="calcularPedidosManuales" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#calcularPedidosManuales" onclick="accion(this)">
+                                        <span class="menu-title">Pedidos Insumos</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!--Menu Bo-->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Garzon</span>
+
+                        </a>
+                        <div class="collapse show" id="garzon" style="">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
