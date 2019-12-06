@@ -71,6 +71,7 @@
 <body class="sidebar-fixed">
     <div class="container-scroller">
 
+
         <div class="container-fluid page-body-wrapper">
             <!-- partial -->
             <!-- partial:../../partials/_sidebar.html -->
@@ -80,223 +81,349 @@
                         <div class="profile-desc">
                             <p class="name mb-0">@personal.Nombres_personal</p>
                             <p class="designation mb-0">@personal.Rol.Descripcion_rol </p>
-                            <input type="hidden"  value="@personal.Rut_personal" id="SESION_PERSONAL" />
-                        </div> 
+                            <input type="hidden" value="@personal.Rut_personal" id="SESION_PERSONAL" />
+                        </div>
                     </div>
                 </div>
                 <ul class="nav">
-                    
-                    <!--Cocina-->
+
+                    @if (personal.Rol.Descripcion_rol == "ADMIN")
+                    {
+                        <!--Cocina-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
+                                <i class="mdi mdi-cake menu-icon"></i>
+                                <span class="menu-title">Cocina</span>
+
+                            </a>
+                            <div class="collapse show" id="cocina" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#cocinaNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#deshabilitarRecetaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Deshabilitar Receta</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                        <!--Finanzas-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#caja" aria-expanded="true" aria-controls="caja">
+                                <i class="mdi mdi-cash-multiple menu-icon"></i>
+                                <span class="menu-title">Finanzas</span>
+                            </a>
+                            <div class="collapse show" id="caja" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
+                                            <span class="menu-title">Pagar Órdenes</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pagoNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
+                                            <span class="menu-title">Cierre Caja</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                        <!--Garzon-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
+                                <i class="mdi mdi-account-switch menu-icon"></i>
+                                <span class="menu-title">Garzón</span>
+
+                            </a>
+                            <div class="collapse show" id="garzon" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pedirOrdenGarzonIndex" onclick="accion(this)">
+                                            <span class="menu-title">Detalle Cliente</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tableroMesaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero Mesa</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!--Menu Bar-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
+                                <i class="mdi mdi-food-variant menu-icon"></i>
+                                <span class="menu-title">Bar</span>
+
+                            </a>
+                            <div class="collapse show" id="bar" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#barIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+                        <!--Menu Bodega-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#bodega" aria-expanded="true" aria-controls="bodega">
+                                <i class="mdi mdi-dropbox menu-icon"></i>
+                                <span class="menu-title">Bodega</span>
+
+                            </a>
+                            <div class="collapse show" id="vistasStock" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#vistasStockIndex" onclick="accion(this)">
+                                            <span class="menu-title">Vistas Stock</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="collapse show" id="calcularPedidosManuales" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#calcularPedidosManuales" onclick="accion(this)">
+                                            <span class="menu-title">Pedidos Insumos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#IndexInsumosNecesarios" onclick="accion(this)">
+                                            <span class="menu-title">Nivel de insumos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#habilitarRecetaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Habilitar Receta</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
+
+                    @if (personal.Rol.Descripcion_rol == "BODEGA")
+                    {
+
+                        <!--Menu Bodega-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#bodega" aria-expanded="true" aria-controls="bodega">
+                                <i class="mdi mdi-dropbox menu-icon"></i>
+                                <span class="menu-title">Bodega</span>
+
+                            </a>
+                            <div class="collapse show" id="vistasStock" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#vistasStockIndex" onclick="accion(this)">
+                                            <span class="menu-title">Vistas Stock</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="collapse show" id="calcularPedidosManuales" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#calcularPedidosManuales" onclick="accion(this)">
+                                            <span class="menu-title">Pedidos Insumos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#IndexInsumosNecesarios" onclick="accion(this)">
+                                            <span class="menu-title">Nivel de insumos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#habilitarRecetaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Habilitar Receta</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    }
+
+                    @if (personal.Rol.Descripcion_rol == "FINANZAS")
+                    {
+                        <!--Finanzas-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#caja" aria-expanded="true" aria-controls="caja">
+                                <i class="mdi mdi-cash-multiple menu-icon"></i>
+                                <span class="menu-title">Finanzas</span>
+                            </a>
+                            <div class="collapse show" id="caja" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
+                                            <span class="menu-title">Pagar Órdenes</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pagoNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
+                                            <span class="menu-title">Cierre Caja</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
+
+                    @if (personal.Rol.Descripcion_rol == "GARZON")
+                    {
+
+                        <!--Garzon-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
+                                <i class="mdi mdi-account-switch menu-icon"></i>
+                                <span class="menu-title">Garzón</span>
+
+                            </a>
+                            <div class="collapse show" id="garzon" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pedirOrdenGarzonIndex" onclick="accion(this)">
+                                            <span class="menu-title">Detalle Cliente</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tableroMesaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero Mesa</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
+
+                    @if (personal.Rol.Descripcion_rol == "COCINA")
+                    {
+                        <!--Cocina-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
+                                <i class="mdi mdi-cake menu-icon"></i>
+                                <span class="menu-title">Cocina</span>
+
+                            </a>
+                            <div class="collapse show" id="cocina" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#cocinaNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#deshabilitarRecetaIndex" onclick="accion(this)">
+                                            <span class="menu-title">Deshabilitar Receta</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
+
+                    @if (personal.Rol.Descripcion_rol == "BAR")
+                    {
+
+                        <!--Menu Bar-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
+                                <i class="mdi mdi-food-variant menu-icon"></i>
+                                <span class="menu-title">Bar</span>
+
+                            </a>
+                            <div class="collapse show" id="bar" style="">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#barIndex" onclick="accion(this)">
+                                            <span class="menu-title">Tablero de ejecución</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
+                                            <span class="menu-title">Notificaciones</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    }
+
+                    <!--Sistema-->
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#cocina" aria-expanded="true" aria-controls="cocina">
-                            <i class="mdi mdi-cake menu-icon"></i>
-                            <span class="menu-title">Cocina</span>
+                            <i class="mdi mdi-windows menu-icon"></i>
+                            <span class="menu-title">Sistema</span>
 
                         </a>
                         <div class="collapse show" id="cocina" style="">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#cocinaIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero de ejecución</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#cocinaNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#deshabilitarRecetaIndex" onclick="accion(this)">
-                                        <span class="menu-title">Deshabilitar Receta</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <!--Caja-->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#caja" aria-expanded="true" aria-controls="caja">
-                            <i class="mdi mdi-cash-multiple menu-icon"></i>
-                            <span class="menu-title">Caja</span>
-                        </a>
-                        <div class="collapse show" id="caja" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#pagarOrdenIndex" onclick="accion(this)">
-                                        <span class="menu-title">Pagar Órdenes</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#pagoNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <!--Garzon-->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
-                            <i class="mdi mdi-account-switch menu-icon"></i>
-                            <span class="menu-title">Garzón</span>
-
-                        </a>
-                        <div class="collapse show" id="garzon" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#pedirOrdenGarzonIndex" onclick="accion(this)">
-                                        <span class="menu-title">Detalle Cliente</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#garzonIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero de ejecución</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!--Menu Bar-->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#bar" aria-expanded="true" aria-controls="bar">
-                            <i class="mdi mdi-food-variant menu-icon"></i>
-                            <span class="menu-title">Bar</span>
-
-                        </a>
-                        <div class="collapse show" id="bar" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#barIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero de ejecución</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#barNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#finanzas" aria-expanded="true" aria-controls="cocina">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Finanzas</span>
-
-                        </a>
-                        <div class="collapse show" id="finanzas" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#garzonNotificacion" onclick="accion(this)">
-                                        <span class="menu-title">Notificaciones</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!--Menu Bodega-->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#bodega" aria-expanded="true" aria-controls="bodega">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Bodega</span>
-
-                        </a>
-                        <div class="collapse show" id="vistasStock" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#vistasStockIndex" onclick="accion(this)">
-                                        <span class="menu-title">Vistas Stock</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="collapse show" id="calcularPedidosManuales" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#calcularPedidosManuales" onclick="accion(this)">
-                                        <span class="menu-title">Pedidos Insumos</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!--Menu Bo-->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#garzon" aria-expanded="true" aria-controls="garzon">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Garzon</span>
-
-                        </a>
-                        <div class="collapse show" id="garzon" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#finanzasIndexCierreCaja" onclick="accion(this)">
-                                        <span class="menu-title">Cierre Caja</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#finanzas" aria-expanded="true" aria-controls="cocina">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Insumos</span>
-
-                        </a>
-                        <div class="collapse show" id="insumosNece" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#IndexInsumosNecesarios" onclick="accion(this)">
-                                        <span class="menu-title">Nivel de insumos</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#habilitarReceta" aria-expanded="true" aria-controls="habilitarReceta">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">habilitar Receta</span>
-
-                        </a>
-                        <div class="collapse show" id="habilitarReceta" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#habilitarRecetaIndex" onclick="accion(this)">
-                                        <span class="menu-title">habilitar Receta</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#tableroMesa" aria-expanded="true" aria-controls="tableroMesa">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">tablero Mesa</span>
-
-                        </a>
-                        <div class="collapse show" id="tableroMesa" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#tableroMesaIndex" onclick="accion(this)">
-                                        <span class="menu-title">Tablero Mesa</span>
+                                    <a class="nav-link" href="/">
+                                        <span class="menu-title">Cerrar Sesión</span>
                                     </a>
                                 </li>
                             </ul>
@@ -318,11 +445,11 @@
                     </div>
                 </div>
                 <!---
-                <div id="loader" class="dot-opacity-loader" style="visibility: hidden">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>-->
+            <div id="loader" class="dot-opacity-loader" style="visibility: hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>-->
             </nav>
             <!-- partial -->
             <div class="main-panel">

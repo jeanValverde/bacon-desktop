@@ -15,18 +15,26 @@
 
     <div id="target-main-insumos-comprar">
         <div class="row">
-            <div class='card'>
-            <div class='card-body '>
-            <div class="col-12" style="text-align:center">
-                <h4>Nivel de stock de los insumos</h4><br />
-            </div>
-            <div class="col-12" style="text-align:left">
-                <h5>Se detallan todos los insumos por su nivel actual de stock para saber cual insumo debe ser repuesto, indicado con un mensaje, los cuales son 4:</h5><br />
-                <div class='badge badge-success mr-1'><i class='mdi mdi-check-circle-outline'></i> <h5>NIVEL STOCK NORMAL :</h5> </div> <h5>  No hay necesidad de comprar este insumo.</h5><br />
-                <div class='badge badge-warning mr-1'><i class='mdi mdi-alert-outline'></i> <h5> NIVEL STOCK MEDIO</h5></div> <h5> : Se sugiere comprar este insumo.</h5><br />
-                <div class='badge badge-danger mr-1'><i class='mdi mdi-comment-alert-outline'></i> <h5>NIVEL STOCK BAJO</h5></div> <h5> : Se debe comprar este insumo.</h5><br />
-                <div class='badge badge-danger mr-1'><i class='mdi mdi-comment-remove-outline'></i> <h5>STOCK AGOTADO</h5></div> <h5>: Se debe comprar este insumo con urgencia.</h5><br />
-            </div>
+            <div class="col-12">
+                <div class="accordion accordion-filled" id="accordion-3" role="tablist">
+                    <div class="card" style="">
+                        <div class="card-header" role="tab" id="heading-7">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7" class="collapsed">Nivel De Stock De Los Insumos</a>
+                            </h5>
+                        </div>
+                        <div id="collapse-7" class="collapse" role="tabpanel" aria-labelledby="heading-7" data-parent="#accordion-3" style="">
+                            <div class="card-body mt-4" style="background: #fff; color: #000;">
+                                <div class="col-12" style="text-align:left">
+                                    <h5>Se detallan todos los insumos por su nivel actual de stock para saber cual insumo debe ser repuesto, indicado con un mensaje, los cuales son 4:</h5><br>
+                                    <div class="badge badge-success mr-1"><i class="mdi mdi-check-circle-outline"></i> <h5>NIVEL STOCK NORMAL :</h5> </div> <h5>  No hay necesidad de comprar este insumo.</h5><br>
+                                    <div class="badge badge-warning mr-1"><i class="mdi mdi-alert-outline"></i> <h5> NIVEL STOCK MEDIO</h5></div> <h5> : Se sugiere comprar este insumo.</h5><br>
+                                    <div class="badge badge-danger mr-1"><i class="mdi mdi-comment-alert-outline"></i> <h5>NIVEL STOCK BAJO</h5></div> <h5> : Se debe comprar este insumo.</h5><br>
+                                    <div class="badge badge-danger mr-1"><i class="mdi mdi-comment-remove-outline"></i> <h5>STOCK AGOTADO</h5></div> <h5>: Se debe comprar este insumo con urgencia.</h5><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="target-ord-insumos-comprar" class="row" style="padding-top: 12px">
