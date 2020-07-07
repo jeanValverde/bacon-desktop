@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "detect-port": "^1.2.3",
-    "electron": "^3.0.0",
+    "electron": "^7.2.4",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
